@@ -9,10 +9,10 @@ module kv_block_ram #(
     parameter int ADDR_W = 8)(
     input logic clk, wr_en,
     input logic [ADDR_W - 1: 0] wr_addr, rd_addr,
-
-
+    input logic [WORD_W - 1: 0] wr_data,
+    output logic [WORD_W - 1: 0] rd_data
 );
-
+logic [WORD_W - 1: 0] mem [DEPTH - 1: 0];
 
 always_ff @(posedge  clk) begin
     if(wr_en)
