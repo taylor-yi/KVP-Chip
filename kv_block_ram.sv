@@ -14,6 +14,8 @@ module kv_block_ram #(
 );
 logic [WORD_W - 1: 0] mem [DEPTH - 1: 0];
 
+heyy
+
 always_ff @(posedge  clk) begin
     if(wr_en)
         mem[wr_addr] <= wr_data;
