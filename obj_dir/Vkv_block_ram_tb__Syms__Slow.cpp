@@ -12,7 +12,7 @@ Vkv_block_ram_tb__Syms::Vkv_block_ram_tb__Syms(VerilatedContext* contextp, const
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(227);
+    Verilated::stackCheck(240);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);

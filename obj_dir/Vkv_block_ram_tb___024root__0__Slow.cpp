@@ -4,6 +4,8 @@
 
 #include "Vkv_block_ram_tb__pch.h"
 
+void Vkv_block_ram_tb___024root___timing_ready(Vkv_block_ram_tb___024root* vlSelf);
+
 VL_ATTR_COLD void Vkv_block_ram_tb___024root___eval_static(Vkv_block_ram_tb___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_block_ram_tb___024root___eval_static\n"); );
     Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -11,6 +13,7 @@ VL_ATTR_COLD void Vkv_block_ram_tb___024root___eval_static(Vkv_block_ram_tb___02
     // Body
     vlSelfRef.__Vtrigprevexpr___TOP__kv_block_ram_tb__DOT__clk__0 
         = vlSelfRef.kv_block_ram_tb__DOT__clk;
+    Vkv_block_ram_tb___024root___timing_ready(vlSelf);
     do {
         vlSelfRef.__VactTriggeredAcc[vlSelfRef.__Vi] 
             = vlSelfRef.__VactTriggered[vlSelfRef.__Vi];

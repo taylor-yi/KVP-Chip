@@ -42,6 +42,8 @@ module kv_block_ram_tb();
 
     initial begin
         //WRITE TB IN HERE
+        repeat (100) @(posedge clk);
+        #100;
         $finish;
     end
         
