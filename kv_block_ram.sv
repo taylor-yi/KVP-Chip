@@ -16,9 +16,10 @@ module kv_block_ram #(
     logic [WORD_W - 1: 0] mem [DEPTH - 1: 0];
 
     always_ff @(posedge  clk) begin
-        if(wr_en)
+        if(wr_en) begin
             mem[wr_addr] <= wr_data;
             rd_data <= mem[rd_addr];
+        end
     end
 endmodule
 
