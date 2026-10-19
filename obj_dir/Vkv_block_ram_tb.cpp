@@ -148,6 +148,14 @@ VL_ATTR_COLD void Vkv_block_ram_tb::dumpTriggersReact() {
     Vkv_block_ram_tb___024root___eval_dump_triggers__react(&(vlSymsp->TOP));
 }
 
+void Vkv_block_ram_tb::eval_end_step() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+eval_end_step Vkv_block_ram_tb::eval_end_step\n"); );
+#ifdef VM_TRACE
+    // Tracing
+    if (VL_UNLIKELY(vlSymsp->__Vm_dumping)) vlSymsp->_traceDump();
+#endif  // VM_TRACE
+}
+
 //============================================================
 // Events and timing
 bool Vkv_block_ram_tb::eventsPending() { return !vlSymsp->TOP.__VdlySched.empty() && !contextp()->gotFinish(); }

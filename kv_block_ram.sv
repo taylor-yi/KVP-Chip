@@ -35,6 +35,11 @@ module kv_block_ram_tb();
     end
 
     initial begin
+        $dumpfile("dump.vcd");     // the output file's name
+        $dumpvars(0, PE_tb);    // depth 0 = this scope AND everything under it
+    end
+
+    initial begin
         //WRITE TB IN HERE
     end
         

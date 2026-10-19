@@ -11,6 +11,11 @@ void Vkv_block_ram_tb___024root___eval_initial(Vkv_block_ram_tb___024root* vlSel
     Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    {
+        // Inlined CFunc: _eval_initial__TOP
+        vlSymsp->_vm_contextp__->dumpfile("dump.vcd"s);
+        vlSymsp->_traceDumpOpen();
+    }
     Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__0(vlSelf);
 }
 
