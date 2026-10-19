@@ -2,7 +2,6 @@
 // Word width = 256
 // Depth
 // Addrress width
-
 module kv_block_ram #(
     parameter int WORD_W = 256,
     parameter int DEPTH = 256, 
