@@ -13,6 +13,7 @@ module kv_block_ram #(
     output logic [WORD_W - 1: 0] rd_data
 );
 
+    logic [WORD_W - 1: 0] mem [DEPTH - 1: 0];
 
     always_ff @(posedge  clk) begin
         if(wr_en)
