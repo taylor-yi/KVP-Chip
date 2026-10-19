@@ -2,6 +2,7 @@
 // Word width = 256
 // Depth
 // Addrress width
+`timescale 1ns/1ps
 module kv_block_ram #(
     parameter int WORD_W = 256,
     parameter int DEPTH = 256, 
@@ -19,4 +20,22 @@ module kv_block_ram #(
             mem[wr_addr] <= wr_data;
             rd_data <= mem[rd_addr];
     end
+endmodule
+
+module kv_block_ram_tb();
+    logic clk, wr_en;
+    logic [7:0] wr_addr, rd_addr;
+    logic [255:0] wr_data, rd_data;
+
+    kv_block_ram dut(.*);
+
+    initial begin
+        clk =0;
+        forever #5 clk = ~clk;
+    end
+
+    initial begin
+        //WRITE TB IN HERE
+    end
+        
 endmodule
