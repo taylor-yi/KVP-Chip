@@ -15,6 +15,7 @@ void Vkv_block_ram_tb___024root___eval_initial(Vkv_block_ram_tb___024root* vlSel
         // Inlined CFunc: _eval_initial__TOP
         vlSymsp->_vm_contextp__->dumpfile("dump.vcd"s);
         vlSymsp->_traceDumpOpen();
+        VL_FINISH_MT("kv_block_ram.sv", 44, "");
     }
     Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__0(vlSelf);
 }

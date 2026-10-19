@@ -30,17 +30,18 @@ module kv_block_ram_tb();
     kv_block_ram dut(.*);
 
     initial begin
-        clk =0;
+        clk = 0;
         forever #5 clk = ~clk;
     end
 
     initial begin
         $dumpfile("dump.vcd");     // the output file's name
-        $dumpvars(0, PE_tb);    // depth 0 = this scope AND everything under it
+        $dumpvars(0, kv_block_ram_tb);    // depth 0 = this scope AND everything under it
     end
 
     initial begin
         //WRITE TB IN HERE
+        $finish;
     end
         
 endmodule
