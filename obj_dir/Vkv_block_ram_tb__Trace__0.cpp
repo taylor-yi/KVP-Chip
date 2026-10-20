@@ -22,10 +22,19 @@ void Vkv_block_ram_tb___024root__trace_chg_0_sub_0(Vkv_block_ram_tb___024root* v
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
-    if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[1U]))) {
-        bufp->chgWData(oldp+0,(vlSelfRef.kv_block_ram_tb__DOT__rd_data),256);
+    if (VL_UNLIKELY(((vlSelfRef.__Vm_traceActivity[1U] 
+                      | vlSelfRef.__Vm_traceActivity[2U])))) {
+        bufp->chgBit(oldp+0,(vlSelfRef.kv_block_ram_tb__DOT__wr_en));
+        bufp->chgCData(oldp+1,(vlSelfRef.kv_block_ram_tb__DOT__wr_addr),8);
+        bufp->chgCData(oldp+2,(vlSelfRef.kv_block_ram_tb__DOT__rd_addr),8);
+        bufp->chgWData(oldp+3,(vlSelfRef.kv_block_ram_tb__DOT__wr_data),256);
     }
-    bufp->chgBit(oldp+8,(vlSelfRef.kv_block_ram_tb__DOT__clk));
+    if (VL_UNLIKELY((((vlSelfRef.__Vm_traceActivity[1U] 
+                       | vlSelfRef.__Vm_traceActivity[2U]) 
+                      | vlSelfRef.__Vm_traceActivity[3U])))) {
+        bufp->chgWData(oldp+11,(vlSelfRef.kv_block_ram_tb__DOT__rd_data),256);
+    }
+    bufp->chgBit(oldp+19,(vlSelfRef.kv_block_ram_tb__DOT__clk));
 }
 
 void Vkv_block_ram_tb___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {
@@ -36,4 +45,6 @@ void Vkv_block_ram_tb___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*u
     vlSymsp->__Vm_activity = false;
     vlSymsp->TOP.__Vm_traceActivity[0U] = 0U;
     vlSymsp->TOP.__Vm_traceActivity[1U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[2U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[3U] = 0U;
 }

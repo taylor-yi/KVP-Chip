@@ -42,8 +42,19 @@ module kv_block_ram_tb();
 
     initial begin
         //WRITE TB IN HERE
-        repeat (100) @(posedge clk);
-        #100;
+        wr_en = 0;
+        wr_addr = '0;
+        rd_addr = '0;
+        wr_data = '0;
+        rd_data = '0;
+        #20;
+        wr_en = 1;
+        wr_addr = 8'h55;
+        wr_data = '1;
+        #10;
+        rd_addr = 8'h55;
+        wr_data = 0;
+        #10;
         $finish;
     end
         

@@ -33,6 +33,7 @@ VM_CLASSES_FAST += \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
+  Vkv_block_ram_tb__ConstPool__0__Slow \
   Vkv_block_ram_tb___024root__Slow \
   Vkv_block_ram_tb___024root__0__Slow \
 

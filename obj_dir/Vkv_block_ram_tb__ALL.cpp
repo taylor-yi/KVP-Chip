@@ -4,6 +4,7 @@
 #include "Vkv_block_ram_tb___024root__0.cpp"
 #include "Vkv_block_ram_tb__main.cpp"
 #include "Vkv_block_ram_tb__Trace__0.cpp"
+#include "Vkv_block_ram_tb__ConstPool__0__Slow.cpp"
 #include "Vkv_block_ram_tb___024root__Slow.cpp"
 #include "Vkv_block_ram_tb___024root__0__Slow.cpp"
 #include "Vkv_block_ram_tb__Syms__Slow.cpp"

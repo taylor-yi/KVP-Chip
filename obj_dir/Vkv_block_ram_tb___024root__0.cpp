@@ -17,6 +17,7 @@ void Vkv_block_ram_tb___024root___eval_initial(Vkv_block_ram_tb___024root* vlSel
         vlSymsp->_vm_contextp__->dumpfile("dump.vcd"s);
         vlSymsp->_traceDumpOpen();
     }
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
     Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__0(vlSelf);
     Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__1(vlSelf);
 }
@@ -47,13 +48,11 @@ bool Vkv_block_ram_tb___024root___eval_ico(Vkv_block_ram_tb___024root* vlSelf, C
     return (0U);
 }
 
-void Vkv_block_ram_tb___024root___timing_ready(Vkv_block_ram_tb___024root* vlSelf);
 void Vkv_block_ram_tb___024root___trigger_orInto__act_vec_vec(VlUnpacked<QData/*63:0*/, 1> &out, const VlUnpacked<QData/*63:0*/, 1> &in);
 #ifdef VL_DEBUG
 VL_ATTR_COLD void Vkv_block_ram_tb___024root___dump_triggers__act(const VlUnpacked<QData/*63:0*/, 1> &triggers, const std::string &tag);
 #endif  // VL_DEBUG
 bool Vkv_block_ram_tb___024root___trigger_anySet__act(const VlUnpacked<QData/*63:0*/, 1> &in);
-void Vkv_block_ram_tb___024root___timing_resume(Vkv_block_ram_tb___024root* vlSelf);
 
 bool Vkv_block_ram_tb___024root___eval_act(Vkv_block_ram_tb___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_block_ram_tb___024root___eval_act\n"); );
@@ -72,7 +71,6 @@ bool Vkv_block_ram_tb___024root___eval_act(Vkv_block_ram_tb___024root* vlSelf) {
         vlSelfRef.__Vtrigprevexpr___TOP__kv_block_ram_tb__DOT__clk__0 
             = vlSelfRef.kv_block_ram_tb__DOT__clk;
     }
-    Vkv_block_ram_tb___024root___timing_ready(vlSelf);
     Vkv_block_ram_tb___024root___trigger_orInto__act_vec_vec(vlSelfRef.__VactTriggered, vlSelfRef.__VactTriggeredAcc);
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
@@ -83,7 +81,12 @@ bool Vkv_block_ram_tb___024root___eval_act(Vkv_block_ram_tb___024root* vlSelf) {
     __VactExecute = Vkv_block_ram_tb___024root___trigger_anySet__act(vlSelfRef.__VactTriggered);
     if (__VactExecute) {
         vlSelfRef.__VactTriggeredAcc.fill(0ULL);
-        Vkv_block_ram_tb___024root___timing_resume(vlSelf);
+        {
+            // Inlined CFunc: _timing_resume
+            if ((2ULL & vlSelfRef.__VactTriggered[0U])) {
+                vlSelfRef.__VdlySched.resume();
+            }
+        }
     }
     return (__VactExecute);
 }
@@ -118,7 +121,7 @@ bool Vkv_block_ram_tb___024root___eval_nba(Vkv_block_ram_tb___024root* vlSelf) {
             // Inlined CFunc: _eval_body__nba
             if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
                 Vkv_block_ram_tb___024root___nba_sequent__TOP__0(vlSelf);
-                vlSelfRef.__Vm_traceActivity[1U] = 1U;
+                vlSelfRef.__Vm_traceActivity[3U] = 1U;
             }
         }
         Vkv_block_ram_tb___024root___trigger_clear__act(vlSelfRef.__VnbaTriggered);
@@ -165,30 +168,38 @@ VlCoroutine Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__0(Vkv_block
     co_return;
 }
 
-void Vkv_block_ram_tb___024root____VbeforeTrig_hb691101e__0(Vkv_block_ram_tb___024root* vlSelf, const char* __VeventDescription);
+extern const VlWide<8>/*255:0*/ Vkv_block_ram_tb__ConstPool__CONST_h9e67c271_0;
+extern const VlWide<8>/*255:0*/ Vkv_block_ram_tb__ConstPool__CONST_h5b979007_0;
 
 VlCoroutine Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__1(Vkv_block_ram_tb___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_block_ram_tb___024root___eval_initial__TOP__Vtiming__1\n"); );
     Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ kv_block_ram_tb__DOT__unnamedblk1_1__DOT____Vrepeat0;
-    kv_block_ram_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 = 0;
     // Body
-    kv_block_ram_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 = 0x00000064U;
-    while (VL_LTS_III(32, 0U, kv_block_ram_tb__DOT__unnamedblk1_1__DOT____Vrepeat0)) {
-        Vkv_block_ram_tb___024root____VbeforeTrig_hb691101e__0(vlSelf, 
-                                                               "@(posedge kv_block_ram_tb.clk)");
-        co_await vlSelfRef.__VtrigSched_hb691101e__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(posedge kv_block_ram_tb.clk)", 
-                                                             "kv_block_ram.sv", 
-                                                             45);
-        kv_block_ram_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 
-            = (kv_block_ram_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 
-               - (IData)(1U));
-    }
-    VL_FINISH_MT("kv_block_ram.sv", 46, "");
+    vlSelfRef.kv_block_ram_tb__DOT__wr_en = 0U;
+    vlSelfRef.kv_block_ram_tb__DOT__wr_addr = 0U;
+    vlSelfRef.kv_block_ram_tb__DOT__rd_addr = 0U;
+    VL_ASSIGN_W(256, vlSelfRef.kv_block_ram_tb__DOT__wr_data, Vkv_block_ram_tb__ConstPool__CONST_h9e67c271_0);
+    VL_ASSIGN_W(256, vlSelfRef.kv_block_ram_tb__DOT__rd_data, Vkv_block_ram_tb__ConstPool__CONST_h9e67c271_0);
+    co_await vlSelfRef.__VdlySched.delay(0x0000000000004e20ULL, 
+                                         nullptr, "kv_block_ram.sv", 
+                                         50);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.kv_block_ram_tb__DOT__wr_en = 1U;
+    vlSelfRef.kv_block_ram_tb__DOT__wr_addr = 0x55U;
+    VL_ASSIGN_W(256, vlSelfRef.kv_block_ram_tb__DOT__wr_data, Vkv_block_ram_tb__ConstPool__CONST_h5b979007_0);
+    co_await vlSelfRef.__VdlySched.delay(0x0000000000002710ULL, 
+                                         nullptr, "kv_block_ram.sv", 
+                                         54);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.kv_block_ram_tb__DOT__rd_addr = 0x55U;
+    VL_ASSIGN_W(256, vlSelfRef.kv_block_ram_tb__DOT__wr_data, Vkv_block_ram_tb__ConstPool__CONST_h9e67c271_0);
+    co_await vlSelfRef.__VdlySched.delay(0x0000000000002710ULL, 
+                                         nullptr, "kv_block_ram.sv", 
+                                         57);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    VL_FINISH_MT("kv_block_ram.sv", 58, "");
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
 
@@ -227,6 +238,10 @@ void Vkv_block_ram_tb___024root___nba_sequent__TOP__0(Vkv_block_ram_tb___024root
     Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
+    VlWide<8>/*255:0*/ __Vdly__kv_block_ram_tb__DOT__rd_data;
+    VL_ZERO_W(256, __Vdly__kv_block_ram_tb__DOT__rd_data);
+    VlWide<8>/*255:0*/ __VdlyMask__kv_block_ram_tb__DOT__rd_data;
+    VL_ZERO_W(256, __VdlyMask__kv_block_ram_tb__DOT__rd_data);
     VlWide<8>/*255:0*/ __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0;
     VL_ZERO_W(256, __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0);
     CData/*7:0*/ __VdlyDim0__kv_block_ram_tb__DOT__dut__DOT__mem__v0;
@@ -236,6 +251,23 @@ void Vkv_block_ram_tb___024root___nba_sequent__TOP__0(Vkv_block_ram_tb___024root
     // Body
     __VdlySet__kv_block_ram_tb__DOT__dut__DOT__mem__v0 = 0U;
     if (vlSelfRef.kv_block_ram_tb__DOT__wr_en) {
+        __Vdly__kv_block_ram_tb__DOT__rd_data[0U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][0U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[1U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][1U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[2U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][2U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[3U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][3U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[4U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][4U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[5U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][5U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[6U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][6U];
+        __Vdly__kv_block_ram_tb__DOT__rd_data[7U] = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
+            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][7U];
+        VL_ASSIGN_W(256, __VdlyMask__kv_block_ram_tb__DOT__rd_data, Vkv_block_ram_tb__ConstPool__CONST_h5b979007_0);
         __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0[0U] 
             = vlSelfRef.kv_block_ram_tb__DOT__wr_data[0U];
         __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0[1U] 
@@ -255,31 +287,48 @@ void Vkv_block_ram_tb___024root___nba_sequent__TOP__0(Vkv_block_ram_tb___024root
         __VdlyDim0__kv_block_ram_tb__DOT__dut__DOT__mem__v0 
             = vlSelfRef.kv_block_ram_tb__DOT__wr_addr;
         __VdlySet__kv_block_ram_tb__DOT__dut__DOT__mem__v0 = 1U;
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[0U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][0U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[1U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][1U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[2U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][2U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[3U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][3U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[4U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][4U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[5U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][5U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[6U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][6U];
-        vlSelfRef.kv_block_ram_tb__DOT__rd_data[7U] 
-            = vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem
-            [vlSelfRef.kv_block_ram_tb__DOT__rd_addr][7U];
     }
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[0U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[0U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[0U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[0U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[0U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[1U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[1U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[1U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[1U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[1U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[2U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[2U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[2U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[2U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[2U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[3U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[3U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[3U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[3U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[3U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[4U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[4U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[4U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[4U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[4U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[5U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[5U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[5U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[5U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[5U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[6U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[6U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[6U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[6U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[6U])));
+    vlSelfRef.kv_block_ram_tb__DOT__rd_data[7U] = (
+                                                   (__Vdly__kv_block_ram_tb__DOT__rd_data[7U] 
+                                                    & __VdlyMask__kv_block_ram_tb__DOT__rd_data[7U]) 
+                                                   | (vlSelfRef.kv_block_ram_tb__DOT__rd_data[7U] 
+                                                      & (~ __VdlyMask__kv_block_ram_tb__DOT__rd_data[7U])));
+    VL_ASSIGN_W(256, __VdlyMask__kv_block_ram_tb__DOT__rd_data, Vkv_block_ram_tb__ConstPool__CONST_h9e67c271_0);
     if (__VdlySet__kv_block_ram_tb__DOT__dut__DOT__mem__v0) {
         vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem[__VdlyDim0__kv_block_ram_tb__DOT__dut__DOT__mem__v0][0U] 
             = __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0[0U];
@@ -297,29 +346,6 @@ void Vkv_block_ram_tb___024root___nba_sequent__TOP__0(Vkv_block_ram_tb___024root
             = __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0[6U];
         vlSelfRef.kv_block_ram_tb__DOT__dut__DOT__mem[__VdlyDim0__kv_block_ram_tb__DOT__dut__DOT__mem__v0][7U] 
             = __VdlyVal__kv_block_ram_tb__DOT__dut__DOT__mem__v0[7U];
-    }
-}
-
-void Vkv_block_ram_tb___024root___timing_ready(Vkv_block_ram_tb___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_block_ram_tb___024root___timing_ready\n"); );
-    Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    if ((1ULL & vlSelfRef.__VactTriggered[0U])) {
-        vlSelfRef.__VtrigSched_hb691101e__0.ready("@(posedge kv_block_ram_tb.clk)");
-    }
-}
-
-void Vkv_block_ram_tb___024root___timing_resume(Vkv_block_ram_tb___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_block_ram_tb___024root___timing_resume\n"); );
-    Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.__VtrigSched_hb691101e__0.moveToResumeQueue(
-                                                          "@(posedge kv_block_ram_tb.clk)");
-    vlSelfRef.__VtrigSched_hb691101e__0.resume("@(posedge kv_block_ram_tb.clk)");
-    if ((2ULL & vlSelfRef.__VactTriggered[0U])) {
-        vlSelfRef.__VdlySched.resume();
     }
 }
 
@@ -345,24 +371,6 @@ void Vkv_block_ram_tb___024root___trigger_clear__act(VlUnpacked<QData/*63:0*/, 1
         out[n] = 0ULL;
         n = ((IData)(1U) + n);
     } while ((1U > n));
-}
-
-void Vkv_block_ram_tb___024root____VbeforeTrig_hb691101e__0(Vkv_block_ram_tb___024root* vlSelf, const char* __VeventDescription) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_block_ram_tb___024root____VbeforeTrig_hb691101e__0\n"); );
-    Vkv_block_ram_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    VlUnpacked<QData/*63:0*/, 1> __VTmp;
-    // Body
-    __VTmp[0U] = (QData)((IData)(((IData)(vlSelfRef.kv_block_ram_tb__DOT__clk) 
-                                  & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__kv_block_ram_tb__DOT__clk__0)))));
-    vlSelfRef.__Vtrigprevexpr___TOP__kv_block_ram_tb__DOT__clk__0 
-        = vlSelfRef.kv_block_ram_tb__DOT__clk;
-    if ((1ULL & __VTmp[0U])) {
-        vlSelfRef.__VtrigSched_hb691101e__0.ready(__VeventDescription);
-    }
-    vlSelfRef.__VactTriggeredAcc[0U] = (vlSelfRef.__VactTriggeredAcc[0U] 
-                                        | __VTmp[0U]);
 }
 
 #ifdef VL_DEBUG

@@ -29,9 +29,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vkv_block_ram_tb___024root final {
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
-    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
+    VlUnpacked<CData/*0:0*/, 4> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
-    VlTriggerScheduler __VtrigSched_hb691101e__0;
 
     // INTERNAL VARIABLES
     Vkv_block_ram_tb__Syms* vlSymsp;
