@@ -7,7 +7,7 @@ module kv_block_ram #(
     parameter int WORD_W = 256, //Stems from using BF16 x 16 dimension attention head
     parameter int DEPTH = 256, 
     parameter int ADDR_W = 8)(
-    input logic rst_n, clk, wr_en, rd_en,
+    input logic clk, rst_n, wr_en, rd_en,
     input logic [ADDR_W - 1: 0] wr_addr, rd_addr,
     input logic [WORD_W - 1: 0] wr_data,
     output logic [WORD_W - 1: 0] rd_data

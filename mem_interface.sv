@@ -145,8 +145,8 @@ module mem_interface #(
 
     input logic req_valid, req_write_k, req_write_v,
     input logic [ADDR_W - 1: 0] req_addr,
-    input logic [WORD_W - 1: 0] req_k_data,
-    input logic [WORD_W - 1: 0] req_v_data,
+    input logic [WORD_W - 1: 0] req_data_k,
+    input logic [WORD_W - 1: 0] req_data_v,
     input logic resp_ready,
     
     output logic [WORD_W - 1: 0] resp_data_k,
@@ -155,35 +155,22 @@ module mem_interface #(
     output logic req_ready,
     output logic status
 );
+
+    logic wr_en, rd_en; 
+
     kv_block_ram k_ram(
-        .clk(clk), 
-        .rst_n(rst_n), 
-        .req_addr(req_addr), 
-        .req_k_data(req_k_data), 
-        .req_v_data(req_v_data), 
-        .req_write(req_write_k), 
-        .req_valid(req_valid), 
-        .resp_data_k(resp_data_k),
-         .resp_data_v(resp_data_v), 
-         .resp_valid(resp_valid), 
-         .resp_ready(resp_ready), 
-         .req_ready(req_ready), 
-         .status(status));
+        .clk(clk), .rst_n(rst_n), .wr_en(wr_en), rd_en(rd_en),
+        .wr_addr(req_addr),
+        .rd_addr(req_addr),
+        .wr_data(req_data_k),
+        .rd_data(resp_data_k));
 
     kv_block_ram v_ram(
-        .clk(clk), 
-        .rst_n(rst_n), 
-        .req_addr(req_addr), 
-        .req_k_data(req_k_data), 
-        .req_v_data(req_v_data), 
-        .req_write(req_write_v), 
-        .req_valid(req_valid), 
-        .resp_data_k(resp_data_k), 
-        .resp_data_v(resp_data_v), 
-        .resp_valid(resp_valid), 
-        .resp_ready(resp_ready), 
-        .req_ready(req_ready), 
-        .status(status));
+        .clk(clk), .rst_n(rst_n), .wr_en(wr_en), rd_en(rd_en),
+        .wr_addr(req_addr),
+        .rd_addr(req_addr),
+        .wr_data(req_data_v),
+        .rd_data(resp_data_v));
 
 
 endmodule
