@@ -172,5 +172,24 @@ module mem_interface #(
         .wr_data(req_data_v),
         .rd_data(resp_data_v));
 
+    always_ff @(posedge clk) begin 
+        if (req_valid && req_ready) begin
+            wr_en <= req_write_k || req_write_v;
+            case(req_write)
+                1'b1: wr_en <= 1'b1;
+                1'b0: rd_en <= 1'b1;
+                default: begin
+                    wr_en <= 1'b0;
+                    rd_en <= 1'b0;
+                end
+            endcase
+        end
+        
+    end
+ 
+
+
+    
+
 
 endmodule
