@@ -22,6 +22,6 @@ module mem_interface #(
     output logic status
 );
 
-
+    
 
 endmodule
