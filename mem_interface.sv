@@ -10,11 +10,13 @@ module mem_interface #(
     parameter int ADDR_W = 8
 )(
     input logic rst_n, clk,
+
     input logic req_valid, req_write,
     input logic [ADDR_W - 1: 0] req_addr,
     input logic [WORD_W - 1: 0] req_k_data,
     input logic [WORD_W - 1: 0] req_v_data,
     input logic resp_ready,
+    
     output logic [WORD_W - 1: 0] resp_data_k,
     output logic [WORD_W - 1: 0] resp_data_v,
     output logic resp_valid,
