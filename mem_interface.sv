@@ -174,7 +174,12 @@ module mem_interface #(
 
     always_ff @(posedge clk) begin 
         if (req_valid && req_ready) begin
-            wr_en <= req_write_k || req_write_v;
+            if (req_write) begin
+                wr_en <= req_write_k;
+            end else begin
+                wr_en <= req_write_v;
+            end
+
             case(req_write)
                 1'b1: wr_en <= 1'b1;
                 1'b0: rd_en <= 1'b1;
@@ -188,7 +193,7 @@ module mem_interface #(
     end
 
     always_ff @(posedge clk) begin
-        
+
     end
  
 
