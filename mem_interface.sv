@@ -183,10 +183,21 @@ module mem_interface #(
                     rd_en <= 1'b0;
                 end
             endcase
-        end
+        end 
+        
+    end
+
+    always_ff @(posedge clk) begin
         
     end
  
+
+ - Enable writing on BOTH K and V memories simultaneously.
+    - Send req_k_data to the K memory.
+    - Send req_v_data to the V memory.
+    - Use req_addr for BOTH memory addresses.
+    - A write request does NOT generate a read response.
+    - A write is complete once the RAM accepts the write at the clock edge.
 
 
     
