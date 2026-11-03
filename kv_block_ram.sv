@@ -31,7 +31,5 @@ module kv_block_ram #(
                 rd_data <= mem[rd_addr];
             end
         // end
-
-        
     end
 endmodule
