@@ -1697,21 +1697,11 @@ bool Vkv_mem_interface_tb___024root___trigger_anySet__act(const VlUnpacked<QData
     return (0U);
 }
 
-extern const VlWide<8>/*255:0*/ Vkv_mem_interface_tb__ConstPool__CONST_h5b979007_0;
-
 void Vkv_mem_interface_tb___024root___nba_sequent__TOP__0(Vkv_mem_interface_tb___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vkv_mem_interface_tb___024root___nba_sequent__TOP__0\n"); );
     Vkv_mem_interface_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
-    VlWide<8>/*255:0*/ __Vdly__kv_mem_interface_tb__DOT__resp_data_v;
-    VL_ZERO_W(256, __Vdly__kv_mem_interface_tb__DOT__resp_data_v);
-    VlWide<8>/*255:0*/ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v;
-    VL_ZERO_W(256, __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v);
-    VlWide<8>/*255:0*/ __Vdly__kv_mem_interface_tb__DOT__resp_data_k;
-    VL_ZERO_W(256, __Vdly__kv_mem_interface_tb__DOT__resp_data_k);
-    VlWide<8>/*255:0*/ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k;
-    VL_ZERO_W(256, __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k);
     VlWide<8>/*255:0*/ __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0;
     VL_ZERO_W(256, __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0);
     CData/*7:0*/ __VdlyDim0__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0;
@@ -1727,103 +1717,47 @@ void Vkv_mem_interface_tb___024root___nba_sequent__TOP__0(Vkv_mem_interface_tb__
     // Body
     __VdlySet__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0 = 0U;
     __VdlySet__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0 = 0U;
-    if ((1U & (~ (IData)(vlSelfRef.kv_mem_interface_tb__DOT__rst_n)))) {
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+    if (vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__wr_en) {
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[0U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[0U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[1U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[1U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[2U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[2U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[3U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[3U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[4U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[4U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[5U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[5U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[6U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[6U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[7U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[7U];
+        __VdlyDim0__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_addr;
+        __VdlySet__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0 = 1U;
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[0U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[0U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[1U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[1U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[2U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[2U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[3U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[3U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[4U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[4U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[5U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[5U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[6U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[6U];
+        __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[7U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[7U];
+        __VdlyDim0__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0 
+            = vlSelfRef.kv_mem_interface_tb__DOT__req_addr;
+        __VdlySet__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0 = 1U;
     }
     if (vlSelfRef.kv_mem_interface_tb__DOT__rst_n) {
-        if (vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__rd_en) {
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[0U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][0U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[1U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][1U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[2U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][2U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[3U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][3U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[4U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][4U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[5U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][5U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[6U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][6U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_v[7U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][7U];
-            VL_ASSIGN_W(256, __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v, Vkv_mem_interface_tb__ConstPool__CONST_h5b979007_0);
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[0U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][0U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[1U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][1U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[2U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][2U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[3U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][3U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[4U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][4U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[5U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][5U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[6U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][6U];
-            __Vdly__kv_mem_interface_tb__DOT__resp_data_k[7U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
-                [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][7U];
-            VL_ASSIGN_W(256, __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k, Vkv_mem_interface_tb__ConstPool__CONST_h5b979007_0);
-        }
-        if (vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__wr_en) {
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[0U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[0U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[1U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[1U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[2U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[2U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[3U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[3U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[4U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[4U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[5U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[5U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[6U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[6U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[7U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[7U];
-            __VdlyDim0__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_addr;
-            __VdlySet__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0 = 1U;
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[0U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[0U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[1U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[1U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[2U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[2U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[3U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[3U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[4U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[4U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[5U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[5U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[6U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[6U];
-            __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0[7U] 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[7U];
-            __VdlyDim0__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0 
-                = vlSelfRef.kv_mem_interface_tb__DOT__req_addr;
-            __VdlySet__kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem__v0 = 1U;
-        }
         if (vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state) {
             if (vlSelfRef.kv_mem_interface_tb__DOT__resp_ready) {
                 vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state = 0U;
@@ -1832,602 +1766,58 @@ void Vkv_mem_interface_tb___024root___nba_sequent__TOP__0(Vkv_mem_interface_tb__
             vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state = 1U;
         }
     } else {
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[255U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[254U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[253U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[252U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[251U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[250U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[249U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[248U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[247U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[246U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[245U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[244U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[243U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[242U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[241U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[240U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[239U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[238U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[237U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[236U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[235U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[234U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[233U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[232U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[231U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[230U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[229U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[228U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[227U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[226U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[225U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[224U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[223U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[222U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[221U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[220U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[219U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[218U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[217U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[216U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[215U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[214U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[213U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[212U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[211U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[210U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[209U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[208U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[207U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[206U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[205U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[204U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[203U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[202U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[201U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[200U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[199U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[198U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[197U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[196U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[195U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[194U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[193U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[192U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[191U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[190U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[189U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[188U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[187U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[186U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[185U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[184U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[183U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[182U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[181U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[180U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[179U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[178U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[177U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[176U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[175U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[174U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[173U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[172U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[171U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[170U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[169U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[168U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[167U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[166U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[165U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[164U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[163U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[162U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[161U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[160U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[159U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[158U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[157U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[156U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[155U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[154U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[153U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[152U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[151U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[150U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[149U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[148U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[147U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[146U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[145U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[144U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[143U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[142U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[141U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[140U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[139U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[138U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[137U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[136U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[135U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[134U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[133U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[132U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[131U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[130U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[129U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[128U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[127U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[126U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[125U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[124U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[123U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[122U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[121U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[120U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[119U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[118U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[117U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[116U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[115U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[114U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[113U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[112U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[111U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[110U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[109U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[108U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[107U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[106U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[105U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[104U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[103U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[102U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[101U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[100U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[99U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[98U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[97U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[96U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[95U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[94U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[93U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[92U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[91U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[90U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[89U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[88U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[87U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[86U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[85U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[84U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[83U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[82U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[81U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[80U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[79U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[78U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[77U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[76U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[75U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[74U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[73U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[72U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[71U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[70U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[69U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[68U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[67U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[66U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[65U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[64U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[63U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[62U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[61U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[60U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[59U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[58U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[57U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[56U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[55U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[54U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[53U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[52U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[51U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[50U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[49U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[48U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[47U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[46U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[45U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[44U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[43U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[42U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[41U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[40U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[39U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[38U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[37U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[36U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[35U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[34U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[33U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[32U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[31U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[30U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[29U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[28U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[27U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[26U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[25U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[24U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[23U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[22U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[21U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[20U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[19U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[18U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[17U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[16U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[15U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[14U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[13U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[12U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[11U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[10U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[9U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[8U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[7U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[6U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[5U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[4U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[3U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[2U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[1U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[0U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[255U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[254U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[253U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[252U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[251U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[250U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[249U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[248U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[247U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[246U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[245U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[244U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[243U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[242U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[241U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[240U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[239U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[238U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[237U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[236U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[235U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[234U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[233U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[232U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[231U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[230U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[229U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[228U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[227U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[226U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[225U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[224U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[223U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[222U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[221U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[220U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[219U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[218U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[217U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[216U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[215U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[214U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[213U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[212U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[211U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[210U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[209U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[208U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[207U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[206U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[205U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[204U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[203U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[202U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[201U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[200U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[199U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[198U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[197U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[196U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[195U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[194U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[193U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[192U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[191U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[190U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[189U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[188U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[187U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[186U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[185U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[184U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[183U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[182U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[181U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[180U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[179U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[178U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[177U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[176U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[175U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[174U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[173U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[172U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[171U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[170U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[169U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[168U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[167U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[166U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[165U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[164U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[163U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[162U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[161U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[160U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[159U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[158U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[157U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[156U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[155U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[154U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[153U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[152U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[151U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[150U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[149U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[148U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[147U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[146U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[145U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[144U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[143U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[142U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[141U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[140U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[139U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[138U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[137U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[136U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[135U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[134U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[133U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[132U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[131U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[130U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[129U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[128U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[127U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[126U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[125U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[124U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[123U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[122U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[121U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[120U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[119U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[118U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[117U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[116U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[115U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[114U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[113U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[112U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[111U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[110U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[109U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[108U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[107U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[106U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[105U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[104U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[103U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[102U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[101U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[100U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[99U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[98U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[97U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[96U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[95U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[94U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[93U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[92U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[91U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[90U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[89U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[88U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[87U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[86U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[85U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[84U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[83U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[82U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[81U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[80U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[79U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[78U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[77U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[76U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[75U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[74U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[73U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[72U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[71U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[70U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[69U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[68U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[67U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[66U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[65U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[64U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[63U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[62U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[61U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[60U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[59U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[58U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[57U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[56U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[55U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[54U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[53U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[52U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[51U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[50U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[49U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[48U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[47U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[46U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[45U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[44U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[43U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[42U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[41U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[40U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[39U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[38U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[37U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[36U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[35U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[34U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[33U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[32U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[31U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[30U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[29U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[28U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[27U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[26U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[25U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[24U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[23U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[22U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[21U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[20U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[19U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[18U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[17U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[16U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[15U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[14U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[13U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[12U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[11U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[10U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[9U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[8U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[7U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[6U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[5U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[4U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[3U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[2U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[1U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-        VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem[0U], Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
         vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state = 0U;
     }
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[0U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[0U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[0U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[0U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[0U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[1U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[1U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[1U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[1U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[1U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[2U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[2U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[2U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[2U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[2U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[3U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[3U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[3U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[3U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[3U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[4U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[4U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[4U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[4U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[4U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[5U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[5U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[5U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[5U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[5U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[6U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[6U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[6U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[6U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[6U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[7U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_v[7U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[7U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[7U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v[7U])));
-    VL_ASSIGN_W(256, __VdlyMask__kv_mem_interface_tb__DOT__resp_data_v, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[0U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[0U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[0U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[0U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[0U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[1U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[1U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[1U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[1U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[1U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[2U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[2U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[2U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[2U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[2U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[3U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[3U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[3U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[3U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[3U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[4U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[4U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[4U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[4U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[4U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[5U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[5U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[5U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[5U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[5U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[6U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[6U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[6U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[6U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[6U])));
-    vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[7U] 
-        = ((__Vdly__kv_mem_interface_tb__DOT__resp_data_k[7U] 
-            & __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[7U]) 
-           | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[7U] 
-              & (~ __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k[7U])));
-    VL_ASSIGN_W(256, __VdlyMask__kv_mem_interface_tb__DOT__resp_data_k, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+    if (vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__rd_en) {
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[0U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][0U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[1U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][1U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[2U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][2U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[3U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][3U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[4U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][4U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[5U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][5U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[6U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][6U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[7U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][7U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[0U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][0U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[1U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][1U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[2U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][2U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[3U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][3U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[4U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][4U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[5U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][5U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[6U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][6U];
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[7U] 
+            = vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem
+            [vlSelfRef.kv_mem_interface_tb__DOT__req_addr][7U];
+    }
     if (__VdlySet__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0) {
         vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem[__VdlyDim0__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0][0U] 
             = __VdlyVal__kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem__v0[0U];

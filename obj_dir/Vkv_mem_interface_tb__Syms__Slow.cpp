@@ -12,7 +12,7 @@ Vkv_mem_interface_tb__Syms::Vkv_mem_interface_tb__Syms(VerilatedContext* context
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(1533);
+    Verilated::stackCheck(1405);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);

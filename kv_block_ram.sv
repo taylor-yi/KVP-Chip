@@ -16,13 +16,13 @@ module kv_block_ram #(
     logic [WORD_W - 1: 0] mem [DEPTH - 1: 0];
 
     always_ff @(posedge  clk) begin
-        if(!rst_n) begin
-            mem = '{default: '{default:0}};
-            rd_data = '0;
-            // wr_addr = '0;
-            // rd_addr = '0;
-            // wr_data = '0;
-        end else begin
+        // if(!rst_n) begin
+        //     mem = '{default: '{default:0}};
+        //     rd_data = '0;
+        //     // wr_addr = '0;
+        //     // rd_addr = '0;
+        //     // wr_data = '0;
+        // end else begin
             if(wr_en) begin
                 mem[wr_addr] <= wr_data;
             end 
@@ -30,7 +30,7 @@ module kv_block_ram #(
             if(rd_en) begin
                 rd_data <= mem[rd_addr];
             end
-        end
+        // end
 
         
     end
