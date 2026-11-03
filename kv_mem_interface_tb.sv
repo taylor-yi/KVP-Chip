@@ -48,13 +48,61 @@ module kv_mem_interface_tb ();
 
     int checks = 0, errors = 0, test_errors;
 
-    initial begin
-        // Test 1, write KV vectors to the same address
-        rst_n = 0;
-        repeat (1) @(negedge clk);
-        
-        rst_n = 1;
-        
+    // useful to generate random KV data, 255 bits long generated in 32 bit chunks
+    function automatic logic [255:0] rand256();
+        logic [255:0] r;
+        for(int i = 0; i < 8; i++) begin
+            r[i*32+:32] = $urandom;
+        end
+        return r;
+    endfunction
 
+    //logic [7:0] address_store;
+    logic [WORD_W-1:0] exp_k, exp_v;
+    logic [ADDR_W-1:0] addr;
+
+    initial begin
+        rst_n = 0; req_valid = 0; req_write = 0; resp_ready = 0;
+        req_addr = '0; req_data_k = '0; req_data_v = '0;
+
+        // Test 1, write KV vectors to the same address
+        @(negedge clk);
+        rst_n = 1;
+        test_errors = errors;
+        addr  = ADDR_W'($urandom); //set the random variables
+        exp_k = rand256();
+        exp_v = rand256();
+
+        @(negedge clk); // Write
+        req_valid = 1; req_write = 1;
+        req_addr = addr; req_data_k = exp_k; req_data_v = exp_v;
+        
+        @(negedge clk); // accepted on the posedge in between
+        req_valid = 0;
+        
+        @(negedge clk); // Read
+        req_valid = 1; req_write = 0; req_addr = addr; resp_ready = 1;
+        
+        @(negedge clk); // accepted, RAM loads data
+        req_valid = 0;
+        
+        @(negedge clk);
+        if(req_data_k !== resp_data_k) begin
+            errors++;
+            $error("[%0t]: full write/read cycle failed on Key data. Expected = %0d, got = %0d", $time, req_data_k, resp_data_k);
+        end
+
+        if(req_data_v !== resp_data_v) begin
+            errors++;
+            $error("[%0t]: full write/read cycle failed on Value data. Expected = %0d, got = %0d", $time, req_data_v, resp_data_v);
+        end
+
+        if (test_errors == errors) begin
+            $display("Test 1 passed, successful read and write to both K and V");
+        end else begin 
+            $display("Test 1 failed, read or write to KV failed.");
+        end
+
+        $finish;
     end
 endmodule
