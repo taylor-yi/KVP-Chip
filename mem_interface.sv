@@ -174,10 +174,7 @@ module mem_interface #(
 
     always_comb begin
         if (req_valid && req_ready) begin
-<<<<<<< HEAD
             // wr_en <= req_write_k || req_write_v;
-=======
->>>>>>> c75dc6b2354d9ef6b8f8a8375b127e7a5b404588
             case(req_write)
                 1'b1: wr_en = 1'b1;
                 1'b0: rd_en = 1'b1;
