@@ -1,4 +1,4 @@
-module mem_interface #(
+module kv_mem_interface #(
     parameter int WORD_W = 256,
     parameter int DEPTH = 256,
     parameter int ADDR_W = 8
@@ -54,11 +54,9 @@ module mem_interface #(
 
     always_ff @(posedge clk) begin
         if (!rst_n)
-            read_state = IDLE;
+            read_state <= IDLE;
         else 
             case(read_state)
-                default:
-                    read_state <= IDLE;
                 IDLE: begin
                     if(rd_en) begin
                         read_state <= RESPONSE;
@@ -68,6 +66,9 @@ module mem_interface #(
                     if (resp_ready) begin
                         read_state <= IDLE;
                     end
+                end
+                default: begin
+                    read_state <= IDLE;
                 end
             endcase
     end

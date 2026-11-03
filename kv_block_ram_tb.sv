@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module kv_block_ram_tb();
     logic clk, wr_en;
     logic [7:0] wr_addr, rd_addr;
