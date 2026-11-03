@@ -32,19 +32,25 @@ void Vkv_mem_interface_tb___024root__trace_chg_0_sub_0(Vkv_mem_interface_tb___02
         bufp->chgWData(oldp+12,(vlSelfRef.kv_mem_interface_tb__DOT__req_data_v),256);
         bufp->chgBit(oldp+20,(vlSelfRef.kv_mem_interface_tb__DOT__resp_ready));
         bufp->chgIData(oldp+21,(vlSelfRef.kv_mem_interface_tb__DOT__test_errors),32);
+        bufp->chgWData(oldp+22,(vlSelfRef.kv_mem_interface_tb__DOT__exp_k),256);
+        bufp->chgWData(oldp+30,(vlSelfRef.kv_mem_interface_tb__DOT__exp_v),256);
+        bufp->chgCData(oldp+38,(vlSelfRef.kv_mem_interface_tb__DOT__addr),8);
+        bufp->chgIData(oldp+39,(vlSelfRef.kv_mem_interface_tb__DOT__addresses),24);
+        bufp->chgWData(oldp+40,(vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array),768);
+        bufp->chgWData(oldp+64,(vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array),768);
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[3U]))) {
-        bufp->chgWData(oldp+22,(vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k),256);
-        bufp->chgWData(oldp+30,(vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v),256);
-        bufp->chgBit(oldp+38,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state));
-        bufp->chgBit(oldp+39,((1U & (~ (IData)(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state)))));
-        bufp->chgBit(oldp+40,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state));
+        bufp->chgWData(oldp+88,(vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k),256);
+        bufp->chgWData(oldp+96,(vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v),256);
+        bufp->chgBit(oldp+104,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state));
+        bufp->chgBit(oldp+105,((1U & (~ (IData)(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state)))));
+        bufp->chgBit(oldp+106,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state));
     }
-    bufp->chgBit(oldp+41,(vlSelfRef.kv_mem_interface_tb__DOT__clk));
-    bufp->chgIData(oldp+42,(vlSelfRef.kv_mem_interface_tb__DOT__errors),32);
-    bufp->chgBit(oldp+43,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__wr_en));
-    bufp->chgBit(oldp+44,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__rd_en));
-    bufp->chgBit(oldp+45,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__accept));
+    bufp->chgBit(oldp+107,(vlSelfRef.kv_mem_interface_tb__DOT__clk));
+    bufp->chgIData(oldp+108,(vlSelfRef.kv_mem_interface_tb__DOT__errors),32);
+    bufp->chgBit(oldp+109,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__wr_en));
+    bufp->chgBit(oldp+110,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__rd_en));
+    bufp->chgBit(oldp+111,(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__accept));
 }
 
 void Vkv_mem_interface_tb___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

@@ -118,7 +118,7 @@ bool Vkv_mem_interface_tb___024root___eval_inact(Vkv_mem_interface_tb___024root*
     // Body
     __VinactExecute = vlSelfRef.__VdlySched.awaitingZeroDelay();
     if (__VinactExecute) {
-        VL_FATAL_MT("kv_mem_interface_tb.sv", 21, "", "ZERODLY: Design Verilated with '--no-sched-zero-delay', but #0 delay executed at runtime");
+        VL_FATAL_MT("kv_mem_interface_tb.sv", 18, "", "ZERODLY: Design Verilated with '--no-sched-zero-delay', but #0 delay executed at runtime");
     }
     return (__VinactExecute);
 }
@@ -193,13 +193,14 @@ VlCoroutine Vkv_mem_interface_tb___024root___eval_initial__TOP__Vtiming__0(Vkv_m
         co_await vlSelfRef.__VdlySched.delay(0x0000000000001388ULL, 
                                              nullptr, 
                                              "kv_mem_interface_tb.sv", 
-                                             41);
+                                             38);
         vlSelfRef.kv_mem_interface_tb__DOT__clk = (1U 
                                                    & (~ (IData)(vlSelfRef.kv_mem_interface_tb__DOT__clk)));
     }
     co_return;
 }
 
+extern const VlWide<8>/*255:0*/ Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0;
 void Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(Vkv_mem_interface_tb___024root* vlSelf, const char* __VeventDescription);
 
 VlCoroutine Vkv_mem_interface_tb___024root___eval_initial__TOP__Vtiming__1(Vkv_mem_interface_tb___024root* vlSelf) {
@@ -207,16 +208,10 @@ VlCoroutine Vkv_mem_interface_tb___024root___eval_initial__TOP__Vtiming__1(Vkv_m
     Vkv_mem_interface_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
-    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk1_1__DOT____Vrepeat0;
-    kv_mem_interface_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 = 0;
-    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk1_2__DOT____Vrepeat1;
-    kv_mem_interface_tb__DOT__unnamedblk1_2__DOT____Vrepeat1 = 0;
-    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk1_3__DOT____Vrepeat2;
-    kv_mem_interface_tb__DOT__unnamedblk1_3__DOT____Vrepeat2 = 0;
-    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk1_4__DOT____Vrepeat3;
-    kv_mem_interface_tb__DOT__unnamedblk1_4__DOT____Vrepeat3 = 0;
-    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk1_5__DOT____Vrepeat4;
-    kv_mem_interface_tb__DOT__unnamedblk1_5__DOT____Vrepeat4 = 0;
+    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk3__DOT__i;
+    kv_mem_interface_tb__DOT__unnamedblk3__DOT__i = 0;
+    IData/*31:0*/ kv_mem_interface_tb__DOT__unnamedblk4__DOT__i;
+    kv_mem_interface_tb__DOT__unnamedblk4__DOT__i = 0;
     VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout;
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout);
     VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__0__r;
@@ -225,43 +220,49 @@ VlCoroutine Vkv_mem_interface_tb___024root___eval_initial__TOP__Vtiming__1(Vkv_m
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout);
     VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__1__r;
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__1__r);
+    VlWide<8>/*255:0*/ __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256;
+    VL_ZERO_W(256, __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256);
+    VlWide<8>/*255:0*/ __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256;
+    VL_ZERO_W(256, __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256);
+    VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout;
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout);
+    VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r;
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout;
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout);
+    VlWide<8>/*255:0*/ __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r;
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    VlWide<8>/*255:0*/ __Vtemp_1;
+    VlWide<8>/*255:0*/ __Vtemp_2;
+    VlWide<8>/*255:0*/ __Vtemp_3;
+    VlWide<8>/*255:0*/ __Vtemp_4;
+    IData/*31:0*/ __VExpandSel_WordIdx_1;
+    IData/*31:0*/ __VExpandSel_WordIdx_2;
+    IData/*31:0*/ __VExpandSel_WordIdx_3;
+    IData/*31:0*/ __VExpandSel_WordIdx_4;
+    IData/*31:0*/ __VExpandSel_WordIdx_5;
+    IData/*31:0*/ __VExpandSel_WordIdx_6;
     // Body
     vlSelfRef.kv_mem_interface_tb__DOT__rst_n = 0U;
-    kv_mem_interface_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 = 1U;
-    while (VL_LTS_III(32, 0U, kv_mem_interface_tb__DOT__unnamedblk1_1__DOT____Vrepeat0)) {
-        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
-                                                                   "@(negedge kv_mem_interface_tb.clk)");
-        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(negedge kv_mem_interface_tb.clk)", 
-                                                             "kv_mem_interface_tb.sv", 
-                                                             66);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        kv_mem_interface_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 
-            = (kv_mem_interface_tb__DOT__unnamedblk1_1__DOT____Vrepeat0 
-               - (IData)(1U));
-    }
+    vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_write = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__resp_ready = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_addr = 0U;
+    VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__req_data_k, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+    VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__req_data_v, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         81);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.kv_mem_interface_tb__DOT__rst_n = 1U;
     vlSelfRef.kv_mem_interface_tb__DOT__test_errors 
         = vlSelfRef.kv_mem_interface_tb__DOT__errors;
-    kv_mem_interface_tb__DOT__unnamedblk1_2__DOT____Vrepeat1 = 1U;
-    while (VL_LTS_III(32, 0U, kv_mem_interface_tb__DOT__unnamedblk1_2__DOT____Vrepeat1)) {
-        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
-                                                                   "@(negedge kv_mem_interface_tb.clk)");
-        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(negedge kv_mem_interface_tb.clk)", 
-                                                             "kv_mem_interface_tb.sv", 
-                                                             70);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        kv_mem_interface_tb__DOT__unnamedblk1_2__DOT____Vrepeat1 
-            = (kv_mem_interface_tb__DOT__unnamedblk1_2__DOT____Vrepeat1 
-               - (IData)(1U));
-    }
-    vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 1U;
-    vlSelfRef.kv_mem_interface_tb__DOT__req_write = 1U;
-    vlSelfRef.kv_mem_interface_tb__DOT__req_addr = 
-        (0x000000ffU & VL_RANDOM_I());
+    vlSelfRef.kv_mem_interface_tb__DOT__addr = (0x000000ffU 
+                                                & VL_RANDOM_I());
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout);
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__0__r);
     VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__0__r);
@@ -281,22 +282,14 @@ VlCoroutine Vkv_mem_interface_tb___024root___eval_initial__TOP__Vtiming__1(Vkv_m
         = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__r[6U];
     __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[7U] 
         = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__r[7U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[0U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[0U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[1U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[1U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[2U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[2U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[3U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[3U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[4U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[4U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[5U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[5U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[6U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[6U];
-    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[7U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[0U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[1U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[2U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[3U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[4U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[5U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[6U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k[7U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__0__Vfuncout[7U];
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout);
     VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__1__r);
     VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__1__r);
@@ -316,125 +309,754 @@ VlCoroutine Vkv_mem_interface_tb___024root___eval_initial__TOP__Vtiming__1(Vkv_m
         = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__r[6U];
     __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[7U] 
         = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__r[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[0U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[1U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[2U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[3U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[4U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[5U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[6U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v[7U] = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[7U];
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         88);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 1U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_write = 1U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_addr = vlSelfRef.kv_mem_interface_tb__DOT__addr;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[0U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[1U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[2U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[3U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[4U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[5U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[6U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[7U] 
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_k[7U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[0U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[0U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[0U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[1U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[1U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[1U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[2U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[2U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[2U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[3U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[3U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[3U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[4U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[4U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[4U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[5U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[5U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[5U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[6U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[6U];
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[6U];
     vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[7U] 
-        = __Vfunc_kv_mem_interface_tb__DOT__rand256__1__Vfuncout[7U];
-    kv_mem_interface_tb__DOT__unnamedblk1_3__DOT____Vrepeat2 = 1U;
-    while (VL_LTS_III(32, 0U, kv_mem_interface_tb__DOT__unnamedblk1_3__DOT____Vrepeat2)) {
-        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
-                                                                   "@(negedge kv_mem_interface_tb.clk)");
-        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(negedge kv_mem_interface_tb.clk)", 
-                                                             "kv_mem_interface_tb.sv", 
-                                                             76);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        kv_mem_interface_tb__DOT__unnamedblk1_3__DOT____Vrepeat2 
-            = (kv_mem_interface_tb__DOT__unnamedblk1_3__DOT____Vrepeat2 
-               - (IData)(1U));
-    }
+        = vlSelfRef.kv_mem_interface_tb__DOT__exp_v[7U];
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         92);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 0U;
-    kv_mem_interface_tb__DOT__unnamedblk1_4__DOT____Vrepeat3 = 1U;
-    while (VL_LTS_III(32, 0U, kv_mem_interface_tb__DOT__unnamedblk1_4__DOT____Vrepeat3)) {
-        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
-                                                                   "@(negedge kv_mem_interface_tb.clk)");
-        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(negedge kv_mem_interface_tb.clk)", 
-                                                             "kv_mem_interface_tb.sv", 
-                                                             79);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        kv_mem_interface_tb__DOT__unnamedblk1_4__DOT____Vrepeat3 
-            = (kv_mem_interface_tb__DOT__unnamedblk1_4__DOT____Vrepeat3 
-               - (IData)(1U));
-    }
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         95);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 1U;
     vlSelfRef.kv_mem_interface_tb__DOT__req_write = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_addr = vlSelfRef.kv_mem_interface_tb__DOT__addr;
     vlSelfRef.kv_mem_interface_tb__DOT__resp_ready = 1U;
-    kv_mem_interface_tb__DOT__unnamedblk1_5__DOT____Vrepeat4 = 1U;
-    while (VL_LTS_III(32, 0U, kv_mem_interface_tb__DOT__unnamedblk1_5__DOT____Vrepeat4)) {
-        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
-                                                                   "@(negedge kv_mem_interface_tb.clk)");
-        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(negedge kv_mem_interface_tb.clk)", 
-                                                             "kv_mem_interface_tb.sv", 
-                                                             82);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        kv_mem_interface_tb__DOT__unnamedblk1_5__DOT____Vrepeat4 
-            = (kv_mem_interface_tb__DOT__unnamedblk1_5__DOT____Vrepeat4 
-               - (IData)(1U));
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         98);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 0U;
+    if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.kv_mem_interface_tb__DOT__dut__DOT__read_state)))))) {
+        vlSelfRef.kv_mem_interface_tb__DOT__errors 
+            = ((IData)(1U) + vlSelfRef.kv_mem_interface_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: kv_mem_interface_tb.sv:102: Assertion failed in %m: [%0t] resp_valid not high after read\n",4, 'M',vlSymsp->name(),"kv_mem_interface_tb", 'T',-9
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '#',64,VL_TIME_UNITED_Q(1000));
+        VL_STOP_MT("kv_mem_interface_tb.sv", 102, "");
     }
-    if (VL_UNLIKELY(((0U != ((((((((vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[0U] 
+    if (VL_UNLIKELY(((0U != ((((((((vlSelfRef.kv_mem_interface_tb__DOT__exp_k[0U] 
                                     ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[0U]) 
-                                   | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[1U] 
+                                   | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[1U] 
                                       ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[1U])) 
-                                  | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[2U] 
+                                  | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[2U] 
                                      ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[2U])) 
-                                 | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[3U] 
+                                 | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[3U] 
                                     ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[3U])) 
-                                | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[4U] 
+                                | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[4U] 
                                    ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[4U])) 
-                               | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[5U] 
+                               | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[5U] 
                                   ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[5U])) 
-                              | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[6U] 
+                              | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[6U] 
                                  ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[6U])) 
-                             | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[7U] 
+                             | (vlSelfRef.kv_mem_interface_tb__DOT__exp_k[7U] 
                                 ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[7U])))))) {
         vlSelfRef.kv_mem_interface_tb__DOT__errors 
             = ((IData)(1U) + vlSelfRef.kv_mem_interface_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: kv_mem_interface_tb.sv:85: Assertion failed in %m: [%0t]: full write/read cycle failed on Key data. Expected = %0d, got = %0d\n",6, 'M',vlSymsp->name(),"kv_mem_interface_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: kv_mem_interface_tb.sv:107: Assertion failed in %m: [%0t]: full write/read cycle failed on Key data. Expected = %0d, got = %0d\n",6, 'M',vlSymsp->name(),"kv_mem_interface_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',256,vlSelfRef.kv_mem_interface_tb__DOT__req_data_k.data()
                      , '#',256,vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k.data());
-        VL_STOP_MT("kv_mem_interface_tb.sv", 85, "");
+        VL_STOP_MT("kv_mem_interface_tb.sv", 107, "");
     }
-    if (VL_UNLIKELY(((0U != ((((((((vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[0U] 
+    if (VL_UNLIKELY(((0U != ((((((((vlSelfRef.kv_mem_interface_tb__DOT__exp_v[0U] 
                                     ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[0U]) 
-                                   | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[1U] 
+                                   | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[1U] 
                                       ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[1U])) 
-                                  | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[2U] 
+                                  | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[2U] 
                                      ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[2U])) 
-                                 | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[3U] 
+                                 | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[3U] 
                                     ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[3U])) 
-                                | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[4U] 
+                                | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[4U] 
                                    ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[4U])) 
-                               | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[5U] 
+                               | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[5U] 
                                   ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[5U])) 
-                              | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[6U] 
+                              | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[6U] 
                                  ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[6U])) 
-                             | (vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[7U] 
+                             | (vlSelfRef.kv_mem_interface_tb__DOT__exp_v[7U] 
                                 ^ vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[7U])))))) {
         vlSelfRef.kv_mem_interface_tb__DOT__errors 
             = ((IData)(1U) + vlSelfRef.kv_mem_interface_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: kv_mem_interface_tb.sv:90: Assertion failed in %m: [%0t]: full write/read cycle failed on Value data. Expected = %0d, got = %0d\n",6, 'M',vlSymsp->name(),"kv_mem_interface_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: kv_mem_interface_tb.sv:112: Assertion failed in %m: [%0t]: full write/read cycle failed on Value data. Expected = %0d, got = %0d\n",6, 'M',vlSymsp->name(),"kv_mem_interface_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',256,vlSelfRef.kv_mem_interface_tb__DOT__req_data_v.data()
                      , '#',256,vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v.data());
-        VL_STOP_MT("kv_mem_interface_tb.sv", 90, "");
+        VL_STOP_MT("kv_mem_interface_tb.sv", 112, "");
     }
+    vlSelfRef.kv_mem_interface_tb__DOT__rst_n = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_write = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__resp_ready = 0U;
+    vlSelfRef.kv_mem_interface_tb__DOT__req_addr = 0U;
+    VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__req_data_k, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+    VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__req_data_v, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
     if ((vlSelfRef.kv_mem_interface_tb__DOT__test_errors 
          == vlSelfRef.kv_mem_interface_tb__DOT__errors)) {
-        VL_WRITEF_NX("Test 1 passed, successful read and write to both K and V\n",0);
+        VL_WRITEF_NX("Test 1 passed, successful read and write to both K and V on one piece of data\n",0);
     } else {
         VL_WRITEF_NX("Test 1 failed, read or write to KV failed.\n",0);
     }
-    VL_FINISH_MT("kv_mem_interface_tb.sv", 99, "");
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         125);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.kv_mem_interface_tb__DOT__rst_n = 1U;
+    vlSelfRef.kv_mem_interface_tb__DOT__test_errors 
+        = vlSelfRef.kv_mem_interface_tb__DOT__errors;
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout);
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[0U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[1U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[2U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[3U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[4U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[5U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[6U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[7U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[0U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[1U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[2U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[3U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[4U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[5U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[6U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[0U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[1U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[2U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[3U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[4U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[5U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[6U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[7U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[7U];
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout);
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[0U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[1U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[2U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[3U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[4U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[5U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[6U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[7U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[0U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[1U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[2U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[3U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[4U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[5U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[6U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[0U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[1U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[2U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[3U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[4U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[5U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[6U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[7U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[7U];
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout);
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[0U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[1U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[2U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[3U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[4U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[5U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[6U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[7U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[0U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[1U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[2U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[3U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[4U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[5U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[6U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[8U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[9U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[10U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[11U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[12U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[13U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[14U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[15U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[7U];
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout);
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[0U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[1U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[2U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[3U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[4U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[5U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[6U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[7U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[0U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[1U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[2U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[3U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[4U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[5U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[6U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[8U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[9U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[10U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[11U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[12U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[13U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[14U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[15U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[7U];
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout);
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r);
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[0U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[1U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[2U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[3U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[4U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[5U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[6U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__r[7U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[0U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[1U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[2U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[3U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[4U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[5U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[6U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__3__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[16U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[17U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[18U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[19U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[20U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[21U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[22U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array[23U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_0__rand256[7U];
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout);
+    VL_ZERO_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    VL_RANDOM_W(256, __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r);
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[0U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[1U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[2U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[3U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[4U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[5U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[6U];
+    __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__r[7U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[0U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[0U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[1U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[1U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[2U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[2U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[3U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[3U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[4U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[4U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[5U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[5U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[6U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[6U];
+    __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[7U] 
+        = __Vfunc_kv_mem_interface_tb__DOT__rand256__4__Vfuncout[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[16U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[0U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[17U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[1U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[18U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[2U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[19U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[3U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[20U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[4U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[21U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[5U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[22U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[6U];
+    vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array[23U] 
+        = __Vtask_kv_mem_interface_tb__DOT__fill_arrays__2____VlefCall_1__rand256[7U];
+    vlSelfRef.kv_mem_interface_tb__DOT__addresses = 0x00222324U;
+    Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                               "@(negedge kv_mem_interface_tb.clk)");
+    co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge kv_mem_interface_tb.clk)", 
+                                                         "kv_mem_interface_tb.sv", 
+                                                         131);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    kv_mem_interface_tb__DOT__unnamedblk3__DOT__i = 0U;
+    while (VL_GTS_III(32, 3U, kv_mem_interface_tb__DOT__unnamedblk3__DOT__i)) {
+        vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 1U;
+        vlSelfRef.kv_mem_interface_tb__DOT__req_write = 1U;
+        vlSelfRef.kv_mem_interface_tb__DOT__req_addr 
+            = ((0x17U >= (0x0000001fU & (kv_mem_interface_tb__DOT__unnamedblk3__DOT__i 
+                                         << 3U))) ? 
+               (0x000000ffU & (vlSelfRef.kv_mem_interface_tb__DOT__addresses 
+                               >> (0x0000001fU & (kv_mem_interface_tb__DOT__unnamedblk3__DOT__i 
+                                                  << 3U))))
+                : 0U);
+        if ((0x02ffU >= (0x000003ffU & (kv_mem_interface_tb__DOT__unnamedblk3__DOT__i 
+                                        << 8U)))) {
+            __VExpandSel_WordIdx_1 = (0x00000018U & 
+                                      (kv_mem_interface_tb__DOT__unnamedblk3__DOT__i 
+                                       << 3U));
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[0U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [__VExpandSel_WordIdx_1];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[1U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(1U) + __VExpandSel_WordIdx_1)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[2U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(2U) + __VExpandSel_WordIdx_1)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[3U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(3U) + __VExpandSel_WordIdx_1)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[4U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(4U) + __VExpandSel_WordIdx_1)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[5U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(5U) + __VExpandSel_WordIdx_1)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[6U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(6U) + __VExpandSel_WordIdx_1)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_k[7U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(7U) + __VExpandSel_WordIdx_1)];
+            __VExpandSel_WordIdx_2 = (0x00000018U & 
+                                      (kv_mem_interface_tb__DOT__unnamedblk3__DOT__i 
+                                       << 3U));
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[0U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [__VExpandSel_WordIdx_2];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[1U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(1U) + __VExpandSel_WordIdx_2)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[2U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(2U) + __VExpandSel_WordIdx_2)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[3U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(3U) + __VExpandSel_WordIdx_2)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[4U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(4U) + __VExpandSel_WordIdx_2)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[5U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(5U) + __VExpandSel_WordIdx_2)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[6U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(6U) + __VExpandSel_WordIdx_2)];
+            vlSelfRef.kv_mem_interface_tb__DOT__req_data_v[7U] 
+                = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(7U) + __VExpandSel_WordIdx_2)];
+        } else {
+            VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__req_data_k, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+            VL_ASSIGN_W(256, vlSelfRef.kv_mem_interface_tb__DOT__req_data_v, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+        }
+        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                                   "@(negedge kv_mem_interface_tb.clk)");
+        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(negedge kv_mem_interface_tb.clk)", 
+                                                             "kv_mem_interface_tb.sv", 
+                                                             136);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 0U;
+        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                                   "@(negedge kv_mem_interface_tb.clk)");
+        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(negedge kv_mem_interface_tb.clk)", 
+                                                             "kv_mem_interface_tb.sv", 
+                                                             139);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        kv_mem_interface_tb__DOT__unnamedblk3__DOT__i 
+            = ((IData)(1U) + kv_mem_interface_tb__DOT__unnamedblk3__DOT__i);
+    }
+    kv_mem_interface_tb__DOT__unnamedblk4__DOT__i = 0U;
+    while (VL_GTS_III(32, 3U, kv_mem_interface_tb__DOT__unnamedblk4__DOT__i)) {
+        vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 1U;
+        vlSelfRef.kv_mem_interface_tb__DOT__req_write = 0U;
+        vlSelfRef.kv_mem_interface_tb__DOT__req_addr 
+            = ((0x17U >= (0x0000001fU & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                         << 3U))) ? 
+               (0x000000ffU & (vlSelfRef.kv_mem_interface_tb__DOT__addresses 
+                               >> (0x0000001fU & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                                  << 3U))))
+                : 0U);
+        vlSelfRef.kv_mem_interface_tb__DOT__resp_ready = 1U;
+        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                                   "@(negedge kv_mem_interface_tb.clk)");
+        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(negedge kv_mem_interface_tb.clk)", 
+                                                             "kv_mem_interface_tb.sv", 
+                                                             146);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        vlSelfRef.kv_mem_interface_tb__DOT__req_valid = 0U;
+        if ((0x02ffU >= (0x000003ffU & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                        << 8U)))) {
+            __VExpandSel_WordIdx_3 = (0x00000018U & 
+                                      (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                       << 3U));
+            __Vtemp_1[0U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [__VExpandSel_WordIdx_3];
+            __Vtemp_1[1U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(1U) + __VExpandSel_WordIdx_3)];
+            __Vtemp_1[2U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(2U) + __VExpandSel_WordIdx_3)];
+            __Vtemp_1[3U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(3U) + __VExpandSel_WordIdx_3)];
+            __Vtemp_1[4U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(4U) + __VExpandSel_WordIdx_3)];
+            __Vtemp_1[5U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(5U) + __VExpandSel_WordIdx_3)];
+            __Vtemp_1[6U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(6U) + __VExpandSel_WordIdx_3)];
+            __Vtemp_1[7U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                [((IData)(7U) + __VExpandSel_WordIdx_3)];
+            __VExpandSel_WordIdx_5 = (0x00000018U & 
+                                      (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                       << 3U));
+            __Vtemp_3[0U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [__VExpandSel_WordIdx_5];
+            __Vtemp_3[1U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(1U) + __VExpandSel_WordIdx_5)];
+            __Vtemp_3[2U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(2U) + __VExpandSel_WordIdx_5)];
+            __Vtemp_3[3U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(3U) + __VExpandSel_WordIdx_5)];
+            __Vtemp_3[4U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(4U) + __VExpandSel_WordIdx_5)];
+            __Vtemp_3[5U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(5U) + __VExpandSel_WordIdx_5)];
+            __Vtemp_3[6U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(6U) + __VExpandSel_WordIdx_5)];
+            __Vtemp_3[7U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                [((IData)(7U) + __VExpandSel_WordIdx_5)];
+        } else {
+            VL_ASSIGN_W(256, __Vtemp_1, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+            VL_ASSIGN_W(256, __Vtemp_3, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+        }
+        if (VL_UNLIKELY(((0U != ((((((((vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[0U] 
+                                        ^ __Vtemp_1[0U]) 
+                                       | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[1U] 
+                                          ^ __Vtemp_1[1U])) 
+                                      | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[2U] 
+                                         ^ __Vtemp_1[2U])) 
+                                     | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[3U] 
+                                        ^ __Vtemp_1[3U])) 
+                                    | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[4U] 
+                                       ^ __Vtemp_1[4U])) 
+                                   | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[5U] 
+                                      ^ __Vtemp_1[5U])) 
+                                  | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[6U] 
+                                     ^ __Vtemp_1[6U])) 
+                                 | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k[7U] 
+                                    ^ __Vtemp_1[7U])))))) {
+            vlSelfRef.kv_mem_interface_tb__DOT__errors 
+                = ((IData)(1U) + vlSelfRef.kv_mem_interface_tb__DOT__errors);
+            if ((0x02ffU >= (0x000003ffU & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                            << 8U)))) {
+                __VExpandSel_WordIdx_4 = (0x00000018U 
+                                          & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                             << 3U));
+                __Vtemp_2[0U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [__VExpandSel_WordIdx_4];
+                __Vtemp_2[1U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(1U) + __VExpandSel_WordIdx_4)];
+                __Vtemp_2[2U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(2U) + __VExpandSel_WordIdx_4)];
+                __Vtemp_2[3U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(3U) + __VExpandSel_WordIdx_4)];
+                __Vtemp_2[4U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(4U) + __VExpandSel_WordIdx_4)];
+                __Vtemp_2[5U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(5U) + __VExpandSel_WordIdx_4)];
+                __Vtemp_2[6U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(6U) + __VExpandSel_WordIdx_4)];
+                __Vtemp_2[7U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_k_array
+                    [((IData)(7U) + __VExpandSel_WordIdx_4)];
+            } else {
+                VL_ASSIGN_W(256, __Vtemp_2, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+            }
+            VL_WRITEF_NX("[%0t] K data mismatch. Expected = %0d, got = %0d, on iteration %0d\n",5, 'T',-9
+                         , '#',64,VL_TIME_UNITED_Q(1000)
+                         , '#',256,__Vtemp_2.data()
+                         , '#',256,vlSelfRef.kv_mem_interface_tb__DOT__resp_data_k.data()
+                         , '~',32,kv_mem_interface_tb__DOT__unnamedblk4__DOT__i);
+        }
+        if (VL_UNLIKELY(((0U != ((((((((vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[0U] 
+                                        ^ __Vtemp_3[0U]) 
+                                       | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[1U] 
+                                          ^ __Vtemp_3[1U])) 
+                                      | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[2U] 
+                                         ^ __Vtemp_3[2U])) 
+                                     | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[3U] 
+                                        ^ __Vtemp_3[3U])) 
+                                    | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[4U] 
+                                       ^ __Vtemp_3[4U])) 
+                                   | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[5U] 
+                                      ^ __Vtemp_3[5U])) 
+                                  | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[6U] 
+                                     ^ __Vtemp_3[6U])) 
+                                 | (vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v[7U] 
+                                    ^ __Vtemp_3[7U])))))) {
+            vlSelfRef.kv_mem_interface_tb__DOT__errors 
+                = ((IData)(1U) + vlSelfRef.kv_mem_interface_tb__DOT__errors);
+            if ((0x02ffU >= (0x000003ffU & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                            << 8U)))) {
+                __VExpandSel_WordIdx_6 = (0x00000018U 
+                                          & (kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+                                             << 3U));
+                __Vtemp_4[0U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [__VExpandSel_WordIdx_6];
+                __Vtemp_4[1U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(1U) + __VExpandSel_WordIdx_6)];
+                __Vtemp_4[2U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(2U) + __VExpandSel_WordIdx_6)];
+                __Vtemp_4[3U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(3U) + __VExpandSel_WordIdx_6)];
+                __Vtemp_4[4U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(4U) + __VExpandSel_WordIdx_6)];
+                __Vtemp_4[5U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(5U) + __VExpandSel_WordIdx_6)];
+                __Vtemp_4[6U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(6U) + __VExpandSel_WordIdx_6)];
+                __Vtemp_4[7U] = vlSelfRef.kv_mem_interface_tb__DOT__exp_v_array
+                    [((IData)(7U) + __VExpandSel_WordIdx_6)];
+            } else {
+                VL_ASSIGN_W(256, __Vtemp_4, Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0);
+            }
+            VL_WRITEF_NX("[%0t] V data mismatch. Expected = %0d, got = %0d, on iteration %0d\n",5, 'T',-9
+                         , '#',64,VL_TIME_UNITED_Q(1000)
+                         , '#',256,__Vtemp_4.data()
+                         , '#',256,vlSelfRef.kv_mem_interface_tb__DOT__resp_data_v.data()
+                         , '~',32,kv_mem_interface_tb__DOT__unnamedblk4__DOT__i);
+        }
+        Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(vlSelf, 
+                                                                   "@(negedge kv_mem_interface_tb.clk)");
+        co_await vlSelfRef.__VtrigSched_hc199cafc__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(negedge kv_mem_interface_tb.clk)", 
+                                                             "kv_mem_interface_tb.sv", 
+                                                             156);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        kv_mem_interface_tb__DOT__unnamedblk4__DOT__i 
+            = ((IData)(1U) + kv_mem_interface_tb__DOT__unnamedblk4__DOT__i);
+    }
+    if ((vlSelfRef.kv_mem_interface_tb__DOT__test_errors 
+         == vlSelfRef.kv_mem_interface_tb__DOT__errors)) {
+        VL_WRITEF_NX("Test 2 passed. Multiple read after write cycles.\n",0);
+    } else {
+        VL_WRITEF_NX("Test 2 failed.\n",0);
+    }
+    VL_FINISH_MT("kv_mem_interface_tb.sv", 165, "");
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
@@ -469,7 +1091,6 @@ bool Vkv_mem_interface_tb___024root___trigger_anySet__act(const VlUnpacked<QData
     return (0U);
 }
 
-extern const VlWide<8>/*255:0*/ Vkv_mem_interface_tb__ConstPool__CONST_h9e67c271_0;
 extern const VlWide<8>/*255:0*/ Vkv_mem_interface_tb__ConstPool__CONST_h5b979007_0;
 
 void Vkv_mem_interface_tb___024root___nba_sequent__TOP__0(Vkv_mem_interface_tb___024root* vlSelf) {
@@ -1299,6 +1920,12 @@ void Vkv_mem_interface_tb___024root____VbeforeTrig_hc199cafc__0(Vkv_mem_interfac
     vlSelfRef.__Vtrigprevexpr___TOP__kv_mem_interface_tb__DOT__clk__0 
         = vlSelfRef.kv_mem_interface_tb__DOT__clk;
     if ((4ULL & __VTmp[0U])) {
+        vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
+        vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
+        vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
+        vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
+        vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
+        vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
         vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
         vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);
         vlSelfRef.__VtrigSched_hc199cafc__0.ready(__VeventDescription);

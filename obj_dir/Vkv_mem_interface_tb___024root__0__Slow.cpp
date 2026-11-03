@@ -215,6 +215,12 @@ VL_ATTR_COLD void Vkv_mem_interface_tb___024root___ctor_var_reset(Vkv_mem_interf
     VL_SCOPED_RAND_RESET_W(256, vlSelf->kv_mem_interface_tb__DOT__resp_data_k, __VscopeHash, 8212432846406311901ull);
     VL_SCOPED_RAND_RESET_W(256, vlSelf->kv_mem_interface_tb__DOT__resp_data_v, __VscopeHash, 7640361632824823143ull);
     vlSelf->kv_mem_interface_tb__DOT__test_errors = 0;
+    VL_SCOPED_RAND_RESET_W(256, vlSelf->kv_mem_interface_tb__DOT__exp_k, __VscopeHash, 7934583087904091413ull);
+    VL_SCOPED_RAND_RESET_W(256, vlSelf->kv_mem_interface_tb__DOT__exp_v, __VscopeHash, 12950087589720664232ull);
+    vlSelf->kv_mem_interface_tb__DOT__addr = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 6897274330746289822ull);
+    vlSelf->kv_mem_interface_tb__DOT__addresses = VL_SCOPED_RAND_RESET_I(24, __VscopeHash, 1008297962344938659ull);
+    VL_SCOPED_RAND_RESET_W(768, vlSelf->kv_mem_interface_tb__DOT__exp_k_array, __VscopeHash, 10902717652176659033ull);
+    VL_SCOPED_RAND_RESET_W(768, vlSelf->kv_mem_interface_tb__DOT__exp_v_array, __VscopeHash, 15987646295757823459ull);
     vlSelf->kv_mem_interface_tb__DOT__dut__DOT__read_state = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4567396765519871659ull);
     vlSelf->kv_mem_interface_tb__DOT__dut__DOT__accept = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8109268569330666348ull);
     for (int __Vi0 = 0; __Vi0 < 256; ++__Vi0) {

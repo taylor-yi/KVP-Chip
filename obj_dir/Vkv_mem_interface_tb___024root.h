@@ -21,6 +21,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vkv_mem_interface_tb___024root final {
     CData/*0:0*/ kv_mem_interface_tb__DOT__req_write;
     CData/*7:0*/ kv_mem_interface_tb__DOT__req_addr;
     CData/*0:0*/ kv_mem_interface_tb__DOT__resp_ready;
+    CData/*7:0*/ kv_mem_interface_tb__DOT__addr;
+    IData/*23:0*/ kv_mem_interface_tb__DOT__addresses;
     CData/*0:0*/ kv_mem_interface_tb__DOT__dut__DOT__read_state;
     CData/*0:0*/ kv_mem_interface_tb__DOT__dut__DOT__accept;
     CData/*0:0*/ kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__wr_en;
@@ -32,6 +34,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vkv_mem_interface_tb___024root final {
     VlWide<8>/*255:0*/ kv_mem_interface_tb__DOT__resp_data_v;
     IData/*31:0*/ kv_mem_interface_tb__DOT__errors;
     IData/*31:0*/ kv_mem_interface_tb__DOT__test_errors;
+    VlWide<8>/*255:0*/ kv_mem_interface_tb__DOT__exp_k;
+    VlWide<8>/*255:0*/ kv_mem_interface_tb__DOT__exp_v;
+    VlWide<24>/*767:0*/ kv_mem_interface_tb__DOT__exp_k_array;
+    VlWide<24>/*767:0*/ kv_mem_interface_tb__DOT__exp_v_array;
     IData/*31:0*/ __Vi;
     VlUnpacked<VlWide<8>/*255:0*/, 256> kv_mem_interface_tb__DOT__dut__DOT__v_ram__DOT__mem;
     VlUnpacked<VlWide<8>/*255:0*/, 256> kv_mem_interface_tb__DOT__dut__DOT__k_ram__DOT__mem;

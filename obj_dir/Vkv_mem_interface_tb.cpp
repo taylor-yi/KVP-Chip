@@ -224,6 +224,6 @@ VL_ATTR_COLD void Vkv_mem_interface_tb::traceBaseModel(VerilatedTraceBaseC* tfp,
             " use --trace-fst with VerilatedFst object, and --trace-vcd with VerilatedVcd object");
     }
     stfp->spTrace()->addModel(this);
-    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 49);
+    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 116);
     Vkv_mem_interface_tb___024root__trace_register(&(vlSymsp->TOP), stfp->spTrace());
 }

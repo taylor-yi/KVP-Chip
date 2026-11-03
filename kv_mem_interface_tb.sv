@@ -1,5 +1,4 @@
 /*
-===============================================================================
  TESTBENCH CHECKLIST:
 
     1. [ ] Write known K/V vectors to the same address.
@@ -13,8 +12,6 @@
     9. [ ] Verify reset clears control state.
     10. [ ] Verify no read response is generated for a write.
     11. [ ] Verify no data is lost during request/response handshakes.
-
-===============================================================================
 */
 
 `timescale 1ns/1ps
@@ -48,6 +45,16 @@ module kv_mem_interface_tb ();
 
     int checks = 0, errors = 0, test_errors;
 
+    
+
+    //logic [7:0] address_store;
+    logic [WORD_W-1:0] exp_k, exp_v;
+    logic [ADDR_W-1:0] addr;
+
+    localparam INDICES = 3;
+    logic [INDICES - 1:0][ADDR_W - 1:0] addresses;
+    logic [INDICES - 1:0][WORD_W - 1:0] exp_k_array, exp_v_array; //array of 3 items for test 2.
+
     // useful to generate random KV data, 255 bits long generated in 32 bit chunks
     function automatic logic [255:0] rand256();
         logic [255:0] r;
@@ -57,9 +64,14 @@ module kv_mem_interface_tb ();
         return r;
     endfunction
 
-    //logic [7:0] address_store;
-    logic [WORD_W-1:0] exp_k, exp_v;
-    logic [ADDR_W-1:0] addr;
+    // helper funciton to fill arrays with random data
+    function automatic void fill_arrays();
+        for(int i = 0; i < INDICES; i++) begin
+            exp_k_array[i] = rand256();
+            exp_v_array[i] = rand256();
+        end
+    endfunction
+
 
     initial begin
         rst_n = 0; req_valid = 0; req_write = 0; resp_ready = 0;
@@ -86,21 +98,68 @@ module kv_mem_interface_tb ();
         @(negedge clk); // accepted, RAM loads data
         req_valid = 0;
         
-        @(negedge clk);
-        if(req_data_k !== resp_data_k) begin
+        if (!resp_valid) begin
+            errors++; $error("[%0t] resp_valid not high after read", $time);
+        end
+
+        if(exp_k !== resp_data_k) begin
             errors++;
             $error("[%0t]: full write/read cycle failed on Key data. Expected = %0d, got = %0d", $time, req_data_k, resp_data_k);
         end
 
-        if(req_data_v !== resp_data_v) begin
+        if(exp_v !== resp_data_v) begin
             errors++;
             $error("[%0t]: full write/read cycle failed on Value data. Expected = %0d, got = %0d", $time, req_data_v, resp_data_v);
         end
 
         if (test_errors == errors) begin
-            $display("Test 1 passed, successful read and write to both K and V");
+            $display("Test 1 passed, successful read and write to both K and V on one piece of data");
         end else begin 
             $display("Test 1 failed, read or write to KV failed.");
+        end
+
+        // Test 2, multiple writes, back to back
+        rst_n = 0; req_valid = 0; req_write = 0; resp_ready = 0;
+        req_addr = '0; req_data_k = '0; req_data_v = '0;
+
+        @(negedge clk);
+        rst_n = 1;
+        test_errors = errors;
+        fill_arrays();
+        addresses = '{8'h22, 8'h23, 8'h24};
+        
+        @(negedge clk);
+        for(int i = 0; i < INDICES; i++) begin
+            req_valid = 1; req_write = 1;
+            req_addr = addresses[i]; 
+            req_data_k = exp_k_array[i]; req_data_v = exp_v_array[i];
+            @(negedge clk);
+
+            req_valid = 0;
+            @(negedge clk);
+        end
+
+        for(int i = 0; i < INDICES; i++) begin
+            req_valid = 1; req_write = 0;
+            req_addr = addresses[i]; 
+            resp_ready = 1;
+            @(negedge clk);
+            req_valid = 0;
+            if(resp_data_k !== exp_k_array[i]) begin
+                errors++;
+                $display("[%0t] K data mismatch. Expected = %0d, got = %0d, on iteration %0d", $time, exp_k_array[i], resp_data_k, i);
+            end
+            if(resp_data_v !== exp_v_array[i]) begin
+                errors++;
+                $display("[%0t] V data mismatch. Expected = %0d, got = %0d, on iteration %0d", $time, exp_v_array[i], resp_data_v, i);
+            end
+            @(negedge clk);
+        end
+
+        if(test_errors == errors) begin
+            $display("Test 2 passed. Multiple read after write cycles.");
+        end else begin
+            $display("Test 2 failed.");
         end
 
         $finish;
