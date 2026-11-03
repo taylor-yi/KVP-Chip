@@ -156,7 +156,10 @@ module mem_interface #(
     output logic status
 );
 
-    logic wr_en, rd_en; 
+    typedef enum logic {IDLE, RESPONSE} state_t;
+    state_t read_state;
+
+    logic wr_en, rd_en;
 
     kv_block_ram k_ram(
         .clk(clk), .rst_n(rst_n), .wr_en(wr_en), rd_en(rd_en),
@@ -172,15 +175,15 @@ module mem_interface #(
         .wr_data(req_data_v),
         .rd_data(resp_data_v));
 
-    always_comb begin
+    always_ff @(posedge clk) begin 
         if (req_valid && req_ready) begin
             // wr_en <= req_write_k || req_write_v;
             case(req_write)
-                1'b1: wr_en = 1'b1;
-                1'b0: rd_en = 1'b1;
+                1'b1: wr_en <= 1'b1;
+                1'b0: rd_en <= 1'b1;
                 default: begin
-                    wr_en = 1'b0;
-                    rd_en = 1'b0;
+                    wr_en <= 1'b0;
+                    rd_en <= 1'b0;
                 end
             endcase
         end 
@@ -188,7 +191,18 @@ module mem_interface #(
     end
 
     always_ff @(posedge clk) begin
-
+        case(read_state)
+            default:
+            IDLE: begin
+                if() // figure out the state to accept a request
+            end
+            RESPONSE: begin
+                resp_valid <= 1'b1;
+                if (resp_ready) begin
+                    read_state <= IDLE;
+                end
+            end
+        endcase
     end
  
 
