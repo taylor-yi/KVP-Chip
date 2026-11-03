@@ -19,16 +19,20 @@ module kv_block_ram #(
         if(!rst_n) begin
             mem = '{default: '{default:0}};
             rd_data = '0;
-            wr_addr = '0;
-            rd_addr = '0;
-            wr_data = '0;
-        end else if(wr_en) begin
-            mem[wr_addr] <= wr_data;
+            // wr_addr = '0;
+            // rd_addr = '0;
+            // wr_data = '0;
+        end else begin
+            if(wr_en) begin
+                mem[wr_addr] <= wr_data;
+            end 
+            
+            if(rd_en) begin
+                rd_data <= mem[rd_addr];
+            end
         end
 
-        if(rd_en) begin
-            rd_data <= mem[rd_addr];
-        end
+        
     end
 endmodule
 

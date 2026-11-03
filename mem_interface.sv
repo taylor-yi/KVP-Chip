@@ -152,69 +152,64 @@ module mem_interface #(
     output logic [WORD_W - 1: 0] resp_data_k,
     output logic [WORD_W - 1: 0] resp_data_v,
     output logic resp_valid,
-    output logic req_ready,
-    output logic status
+    output logic req_ready
+    // output logic status
 );
 
     typedef enum logic {IDLE, RESPONSE} state_t;
     state_t read_state;
 
-    logic wr_en, rd_en;
+    logic wr_en, rd_en, accept ;
 
-    kv_block_ram k_ram(
-        .clk(clk), .rst_n(rst_n), .wr_en(wr_en), rd_en(rd_en),
+    kv_block_ram #(.WORD_W(WORD_W), .DEPTH(DEPTH), .ADDR_W(ADDR_W)) k_ram (
+        .clk(clk), .rst_n(rst_n), .wr_en(wr_en), .rd_en(rd_en),
         .wr_addr(req_addr),
         .rd_addr(req_addr),
         .wr_data(req_data_k),
         .rd_data(resp_data_k));
 
-    kv_block_ram v_ram(
-        .clk(clk), .rst_n(rst_n), .wr_en(wr_en), rd_en(rd_en),
+    kv_block_ram #(.WORD_W(WORD_W), .DEPTH(DEPTH), .ADDR_W(ADDR_W)) v_ram (
+        .clk(clk), .rst_n(rst_n), .wr_en(wr_en), .rd_en(rd_en),
         .wr_addr(req_addr),
         .rd_addr(req_addr),
         .wr_data(req_data_v),
         .rd_data(resp_data_v));
 
-    always_ff @(posedge clk) begin 
-        if (req_valid && req_ready) begin
-            // wr_en <= req_write_k || req_write_v;
-            case(req_write)
-                1'b1: wr_en <= 1'b1;
-                1'b0: rd_en <= 1'b1;
-                default: begin
-                    wr_en <= 1'b0;
-                    rd_en <= 1'b0;
-                end
-            endcase
-        end 
-        
+    // Establish handshake
+    assign req_ready = (read_state == IDLE);
+    assign accept = req_valid && req_ready;
+
+    // Decode req_write, 1 is a write request 0 is a read request
+    always_comb begin
+        if (accept) begin
+            wr_en = req_write;
+            rd_en = !req_write;
+        end else begin
+            wr_en = 1'b0;
+            rd_en = 1'b0;
+        end
     end
 
     always_ff @(posedge clk) begin
-        case(read_state)
-            default:
-            IDLE: begin
-                if() // figure out the state to accept a request
-            end
-            RESPONSE: begin
-                resp_valid <= 1'b1;
-                if (resp_ready) begin
+        if (!rst_n)
+            read_state = IDLE;
+        else 
+            case(read_state)
+                default:
                     read_state <= IDLE;
+                IDLE: begin
+                    if(rd_en) begin
+                        read_state <= RESPONSE;
+                    end
                 end
-            end
-        endcase
+                RESPONSE: begin
+                    if (resp_ready) begin
+                        read_state <= IDLE;
+                    end
+                end
+            endcase
     end
+
+    assign resp_valid = (read_state == RESPONSE);
  
-
- - Enable writing on BOTH K and V memories simultaneously.
-    - Send req_k_data to the K memory.
-    - Send req_v_data to the V memory.
-    - Use req_addr for BOTH memory addresses.
-    - A write request does NOT generate a read response.
-    - A write is complete once the RAM accepts the write at the clock edge.
-
-
-    
-
-
 endmodule
