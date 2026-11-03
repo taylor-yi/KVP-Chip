@@ -1,12 +1,12 @@
 /*
  TESTBENCH CHECKLIST:
 
-    1. [ ] Write known K/V vectors to the same address.
-    2. [ ] Read them back and compare against expected values.
-    3. [ ] Verify K and V are accessed simultaneously.
-    4. [ ] Verify read-after-write behavior.
-    5. [ ] Write different values to multiple addresses.
-    6. [ ] Read multiple addresses back-to-back.
+    1. [ ] Write known K/V vectors to the same address. Done
+    2. [ ] Read them back and compare against expected values. Done
+    3. [ ] Verify K and V are accessed simultaneously. Done
+    4. [ ] Verify read-after-write behavior. Done
+    5. [ ] Write different values to multiple addresses. Done
+    6. [ ] Read multiple addresses back-to-back. Done
     7. [ ] Hold rsp_ready LOW and verify rsp_valid/data remain stable.
     8. [ ] Verify no request is accepted while the response is stalled.
     9. [ ] Verify reset clears control state.
@@ -72,6 +72,27 @@ module kv_mem_interface_tb ();
         end
     endfunction
 
+    //reset everything
+    task automatic reset_dut();
+        rst_n = 0; req_valid = 0; req_write = 0; resp_ready = 0;
+        req_addr = '0; req_data_k = '0; req_data_v = '0;
+        @(negedge clk);
+        rst_n = 1;
+    endtask
+
+    // One write
+    task automatic do_write(
+    input logic [ADDR_W-1:0] a,
+    input logic [WORD_W-1:0] k, v);
+
+        @(negedge clk);
+        req_valid = 1; req_write = 1;
+        req_addr = a; req_data_k = k; req_data_v = v;
+
+        while (!req_ready) @(negedge clk); // wait for the interface to be free
+        @(negedge clk); // accepted on the posedge in between
+        req_valid = 0;
+    endtask
 
     initial begin
         rst_n = 0; req_valid = 0; req_write = 0; resp_ready = 0;
@@ -147,11 +168,11 @@ module kv_mem_interface_tb ();
             req_valid = 0;
             if(resp_data_k !== exp_k_array[i]) begin
                 errors++;
-                $display("[%0t] K data mismatch. Expected = %0d, got = %0d, on iteration %0d", $time, exp_k_array[i], resp_data_k, i);
+                $error("[%0t] K data mismatch. Expected = %0d, got = %0d, on iteration %0d", $time, exp_k_array[i], resp_data_k, i);
             end
             if(resp_data_v !== exp_v_array[i]) begin
                 errors++;
-                $display("[%0t] V data mismatch. Expected = %0d, got = %0d, on iteration %0d", $time, exp_v_array[i], resp_data_v, i);
+                $error("[%0t] V data mismatch. Expected = %0d, got = %0d, on iteration %0d", $time, exp_v_array[i], resp_data_v, i);
             end
             @(negedge clk);
         end
@@ -162,6 +183,82 @@ module kv_mem_interface_tb ();
             $display("Test 2 failed.");
         end
 
+        // Test 3: stall the response
+        reset_dut();
+        test_errors = errors;
+        addr  = 8'h40;
+        exp_k = rand256();
+        exp_v = rand256();
+        do_write(addr, exp_k, exp_v);
+
+        @(negedge clk);
+        req_valid = 1; req_write = 0; req_addr = addr; resp_ready = 0;
+        @(negedge clk);
+        req_valid = 0;
+
+        repeat (5) begin
+        @(negedge clk);
+        if (!resp_valid) begin
+            errors++; $error("[%0t] Test 3: resp_valid dropped while stalled", $time);
+        end
+        if (resp_data_k !== exp_k || resp_data_v !== exp_v) begin
+            errors++; $error("[%0t] Test 3: response data changed while stalled", $time);
+        end
+        end
+ 
+        resp_ready = 1; // finally take it
+        @(negedge clk); // consumed on the posedge in between
+        resp_ready = 0;
+        if (resp_valid) begin
+            errors++; $error("[%0t] Test 3: resp_valid still high after being consumed", $time);
+        end
+        if(test_errors == errors) begin
+            $display("Test 3 passed (stalled response holds)");
+        end else begin
+            $display("Test 3 failed.");
+        end
+
+        // Test 4, reset clears the state, without wiping the memory cells
+        reset_dut();
+        test_errors = errors;
+        addr  = 8'h42;
+        exp_k = rand256();
+        exp_v = rand256();
+        do_write(addr, exp_k, exp_v);
+ 
+        @(negedge clk); // stalled read
+        req_valid = 1; req_write = 0; req_addr = addr; resp_ready = 0;
+        @(negedge clk);
+        req_valid = 0;
+        if (!resp_valid) begin
+            errors++; $error("[%0t] Test 4: setup failed, not in RESPONSE", $time);
+        end
+ 
+        rst_n = 0; // synchronous reset, applied on the next posedge
+        @(negedge clk);
+        rst_n = 1;
+        if (resp_valid) begin
+            errors++; $error("[%0t] Test 4: resp_valid still high after reset", $time);
+        end
+        if (!req_ready) begin
+            errors++; $error("[%0t] Test 4: req_ready low after reset", $time);
+        end
+ 
+        // memory should survive the reset
+        @(negedge clk);
+        req_valid = 1; req_write = 0; req_addr = addr; resp_ready = 1;
+        @(negedge clk);
+        req_valid = 0;
+        if (resp_data_k !== exp_k || resp_data_v !== exp_v) begin
+            errors++; $error("[%0t] Test 4: RAM contents were wiped by reset", $time);
+        end
+        @(negedge clk);
+        resp_ready = 0;
+        if(test_errors == errors) begin
+            $display("Test 4 (reset clears control, keeps RAM)");
+        end else begin
+            $display("Test 4 failed.");
+        end
         $finish;
     end
 endmodule
