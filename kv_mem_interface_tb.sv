@@ -259,6 +259,7 @@ module kv_mem_interface_tb ();
         end else begin
             $display("Test 4 failed.");
         end
+        
         $finish;
     end
 endmodule

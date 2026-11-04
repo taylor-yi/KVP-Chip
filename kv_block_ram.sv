@@ -19,7 +19,6 @@ module kv_block_ram #(
             if(wr_en) begin
                 mem[wr_addr] <= wr_data;
             end 
-            
             if(rd_en) begin
                 rd_data <= mem[rd_addr];
             end
