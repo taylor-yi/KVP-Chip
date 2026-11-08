@@ -1,32 +1,34 @@
 `timescale 1ns/1ps
 module page_table #(
-    parameter int WORD_W = 256,
-    parameter int DEPTH = 256,
-    parameter int ADDR_W = 8
+    parameter int NUM_PAGES = 16,
+    parameter int PAGE_W = $clog2(NUM_PAGES)
 )(
     input logic clk, rst_n,
 
-    input logic [3:0] lookup_l_page,
-    output logic [3:0] lookup_p_page,
+    input logic [PAGE_W - 1:0] lookup_l_page,
+    output logic [PAGE_W - 1:0] lookup_p_page,
     output logic lookup_valid,
 
     input logic wr_en,
-    input logic [3:0] wr_lpage,
-    input logic [3:0] wr_ppage
+    input logic [PAGE_W - 1:0] wr_lpage,
+    input logic [PAGE_W - 1:0] wr_ppage
 );
 
-// Decoding engine
-// Lookup: give it a logical page, and it returns the physical page and the valid bit. 
-// Make this combinational (an array read), so the answer comes back the same cycle.
-// Update: when the append controller gets a new page from the allocator, 
-// it writes table[lpage] = ppage and sets valid = 1.
-// Reset: clears every valid bit. You don’t need to clear the page numbers, 
-// because valid = 0 already means “ignore this entry.” That’s REQ-KV-05, so a lookup never silently hands back garbage.
+    logic [NUM_PAGES - 1:0] ppage_table [PAGE_W];
+    logic [NUM_PAGES - 1:0] valid_bits;
 
-    logic [79:0] lut; // 80 bits from 16 x 4+1
+    assign lookup_p_page = ppage_table[lookup_l_page];
+    assign lookup_valid = valid_bits[lookup_l_page];
 
-    always_comb begin
-
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            valid_bits <= '0;
+        end else if (wr_en) begin
+            ppage_table[wr_lpage] <= wr_ppage;
+            valid_bits[wr_lpage] <= 1'b1;
+        end
     end
+
+
 
 endmodule
