@@ -23,4 +23,10 @@ module page_table #(
 // Reset: clears every valid bit. You don’t need to clear the page numbers, 
 // because valid = 0 already means “ignore this entry.” That’s REQ-KV-05, so a lookup never silently hands back garbage.
 
+    logic [79:0] lut; // 80 bits from 16 x 4+1
+
+    always_comb begin
+
+    end
+
 endmodule
