@@ -28,7 +28,4 @@ module page_table #(
             valid_bits[wr_lpage] <= 1'b1;
         end
     end
-
-
-
 endmodule
