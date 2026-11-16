@@ -14,7 +14,7 @@ module page_table #(
     input logic [PAGE_W - 1:0] wr_ppage
 );
 
-    logic [NUM_PAGES - 1:0] ppage_table [PAGE_W];
+    logic [PAGE_W - 1:0] ppage_table [NUM_PAGES - 1:0];
     logic [NUM_PAGES - 1:0] valid_bits;
 
     assign lookup_p_page = ppage_table[lookup_l_page];
