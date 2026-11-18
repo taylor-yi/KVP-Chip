@@ -45,7 +45,6 @@ module kv_mem_interface_tb ();
 
     int checks = 0, errors = 0, test_errors;
 
-    
 
     //logic [7:0] address_store;
     logic [WORD_W-1:0] exp_k, exp_v;
