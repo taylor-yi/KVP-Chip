@@ -79,7 +79,7 @@ module page_allocator_tb();
                 end
 
                 // Test 2, Allocate 16 times in a row
-
+                
                 $finish;
             end
 endmodule
