@@ -16,7 +16,8 @@ module  page_allocator #(parameter int NUM_PAGES = 16,
         logic found_flag;
 
         // full logic
-        assign full = (used_map == '1);
+        // assign full = (used_map == '1);
+        assign full = &used_map;
 
         assign alloc_ok = alloc_req & !full;
         assign alloc_error = alloc_req & full;
@@ -36,6 +37,8 @@ module  page_allocator #(parameter int NUM_PAGES = 16,
         always_ff @(posedge clk) begin
             if(!rst_n) begin
                 used_map <= '0;
+                alloc_ok <= 0;
+                alloc_error <= 0;
             end else begin
                 if(alloc_ok) begin
                     used_map[alloc_page] <= 1'b1;
