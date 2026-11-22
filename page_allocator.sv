@@ -44,7 +44,7 @@ module  page_allocator #(parameter int NUM_PAGES = 16,
                     used_map[alloc_page] <= 1'b1;
                 end
                 
-                if(free_en) begin
+                if(free_en && (used_map[free_ppage] == 1'b1)) begin
                     used_map[free_ppage] <= 1'b0;
                 end
             end
