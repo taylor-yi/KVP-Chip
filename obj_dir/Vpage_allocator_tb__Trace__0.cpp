@@ -32,7 +32,7 @@ void Vpage_allocator_tb___024root__trace_chg_0_sub_0(Vpage_allocator_tb___024roo
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[3U]))) {
         bufp->chgSData(oldp+5,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map),16);
-        bufp->chgBit(oldp+6,((0xffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))));
+        bufp->chgBit(oldp+6,((0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))));
         bufp->chgBit(oldp+7,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__found_flag));
     }
     bufp->chgBit(oldp+8,(vlSelfRef.page_allocator_tb__DOT__clk));

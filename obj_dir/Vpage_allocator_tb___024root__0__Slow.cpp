@@ -164,12 +164,13 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root___stl_sequent__TOP__0(Vpage_alloc
     Vpage_allocator_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.page_allocator_tb__DOT__alloc_ok = ((0xffffU 
-                                                   != (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)) 
+    vlSelfRef.page_allocator_tb__DOT__alloc_ok = ((~ 
+                                                   (0x0000ffffU 
+                                                    == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))) 
                                                   & (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req));
     vlSelfRef.page_allocator_tb__DOT__alloc_error = 
         ((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req) 
-         & (0xffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)));
+         & (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)));
     vlSelfRef.page_allocator_tb__DOT__alloc_page = 0U;
     vlSelfRef.page_allocator_tb__DOT__dut__DOT__found_flag = 0U;
     if ((1U & (~ (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)))) {

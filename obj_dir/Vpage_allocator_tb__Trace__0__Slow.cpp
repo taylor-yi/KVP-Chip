@@ -110,7 +110,7 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root__trace_full_0_sub_0(Vpage_allocat
     bufp->fullBit(oldp+3,(vlSelfRef.page_allocator_tb__DOT__alloc_req));
     bufp->fullIData(oldp+4,(vlSelfRef.page_allocator_tb__DOT__test_errors),32);
     bufp->fullSData(oldp+5,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map),16);
-    bufp->fullBit(oldp+6,((0xffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))));
+    bufp->fullBit(oldp+6,((0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))));
     bufp->fullBit(oldp+7,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__found_flag));
     bufp->fullBit(oldp+8,(vlSelfRef.page_allocator_tb__DOT__clk));
     bufp->fullCData(oldp+9,(vlSelfRef.page_allocator_tb__DOT__alloc_page),4);

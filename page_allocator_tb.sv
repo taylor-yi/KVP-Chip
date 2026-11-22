@@ -39,13 +39,45 @@ module page_allocator_tb();
             endtask
 
             task automatic allocate_pages();
+                alloc_req = 1;
+                @(negedge clk);
+                
+                if(!(alloc_ok && !alloc_error))begin
+                        errors++;
+                        $error("[%0t] ERROR: Allocation signals failed.", $time);
+                end
+
+                // if(alloc_page !== PAGE_W'(page)) begin
+                //         errors++;
+                //         $display("[%0t] ERROR: Incorrect page allocated", $time);
+                // end
+
+                alloc_req = 0;
+                @(negedge clk);
+            endtask
+
+            task automatic allocate_all();
+                for(int i = 0; i < NUM_PAGES; i++)begin
+                    allocate_pages();
+                end
+            endtask
+
+            task automatic free_page(int page);
                 if (page > NUM_PAGES - 1 || page < 0) begin
                     $error("[%0t] ERROR: Not within the bounds", $time);
                 end
-                alloc_req = 1;
+                free_en = 1;
+                free_ppage = PAGE_W'(page);
                 @(negedge clk);
-                alloc_req = 0;
+                free_en = 0;
+                free_ppage = '0;
                 @(negedge clk);
+            endtask
+
+            task automatic free_all();
+                for(int i = 0; i < NUM_PAGES; i++) begin
+                    free_page(i);
+                end
             endtask
 
             initial begin
@@ -85,6 +117,35 @@ module page_allocator_tb();
                 end
 
                 // Test 2, Allocate 16 times in a row
+                reset_everything();
+                test_errors = errors;
+
+                for(int i = 0; i < NUM_PAGES; i++) begin
+                    allocate_pages();
+
+                    if(alloc_page !== PAGE_W'(i + 1)) begin
+                        errors++;
+                        $error("[%0t] ERROR: Incorrect page allocated", $time);
+                    end
+                    
+                end
+
+                if(dut.full !== 1)begin
+                    errors++;
+                    $error("[%0t] ERROR: Full is not 1.", $time);
+                end
+
+                for(int i = 0; i < NUM_PAGES; i++) begin
+                    if(!dut.used_map[i]) begin
+                        $error("[%0t] ERROR: Used_map not funcitoning correctly.", $time);
+                    end
+                end
+
+                if(test_errors == errors) begin
+                    $display("Test 2 Passed: 16 pages filled, signals verified", $time);
+                end else begin
+                    $display("Test 2 Failed: 16 Pages not filled, or signal error.", $time);
+                end
 
                 $finish;
             end

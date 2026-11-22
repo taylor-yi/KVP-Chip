@@ -37,8 +37,6 @@ module  page_allocator #(parameter int NUM_PAGES = 16,
         always_ff @(posedge clk) begin
             if(!rst_n) begin
                 used_map <= '0;
-                alloc_ok <= 0;
-                alloc_error <= 0;
             end else begin
                 if(alloc_ok) begin
                     used_map[alloc_page] <= 1'b1;
