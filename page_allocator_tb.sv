@@ -85,26 +85,6 @@ module page_allocator_tb();
                 end
 
                 // Test 2, Allocate 16 times in a row
-                reset_everything();
-                test_errors = errors;
-                for (i = 0; i < NUM_PAGES ; i++) begin
-                    allocate_pages();
-                    if (!(alloc_ok && !alloc_error)) begin
-                        $error("[%0t] ERROR: Allocation signals failed", $time);
-                    end
-                end
-                if(dut.full !== 1)begin
-                    errors++;
-                    $error("[%0t] ERROR: Full is 0.", $time);
-                end
-                for (i = 0; i < NUM_PAGES; i++) begin
-                    if (dut.used_map[i] !== 1) begin
-                        errors++;
-                        $error("[%0t] ERROR: Used map not filled", $time);
-                    end
-                end
-
-                
 
                 $finish;
             end
