@@ -5,18 +5,18 @@ module  kv_metadata_manager import kvp_pkg::*; (
             
             output logic token_ready,
             output logic token_commited,
-            output [NUM_PAGES - 1:0] logical_page,
-            output integer offset //can change to page_size array I think
+            output logic [PAGE_W - 1:0] logical_page,
+            output logic [OFFSET_W - 1:0] offset //can change to page_size array I think
         );
 
         integer num_tokens;
-        logic [NUM_PAGES - 1:0] logical_page;
+        logic [PAGE_W - 1:0] logical_page;
 
         assign token_ready = ~token_req;
 
         always_comb begin 
-            logical_page = num_tokens / PAGE_SIZE;
-            offset = num_tokens % PAGE_SIZE;
+            logical_page = PAGE_W'(num_tokens / PAGE_SIZE);
+            offset = OFFSET_W'(num_tokens % PAGE_SIZE);
         end
 
         always_ff @(posedge clk, negedge rst_n) begin

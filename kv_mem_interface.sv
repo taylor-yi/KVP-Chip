@@ -2,7 +2,8 @@
 module kv_mem_interface import kvp_pkg::*; (
     input logic rst_n, clk,
 
-    input logic req_valid, req_write,
+    input logic req_valid, 
+    input logic req_write,
     input logic [ADDR_W - 1: 0] req_addr,
     input logic [WORD_W - 1: 0] req_data_k,
     input logic [WORD_W - 1: 0] req_data_v,
