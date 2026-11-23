@@ -9,10 +9,12 @@ module kv_address_generator import kvp_pkg::*; (
     // output logic [ADDR_W - 1:0] v_addr,
 );
 
-    logic [ADDR_W - 1:0] physical_slot;
+    assign addr = {physical_page, offset};
 
-    assign physical_slot = physical_page * PAGE_SIZE + offset;
-    assign addr = physical_slot * HEAD_DIM;
+    // logic [ADDR_W - 1:0] physical_slot;
+
+    // assign physical_slot = physical_page * PAGE_SIZE + offset;
+    // assign addr = physical_slot * HEAD_DIM;
     // assign v_addr = physical_slot * HEAD_DIM;
 
 endmodule
