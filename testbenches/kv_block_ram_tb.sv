@@ -1,6 +1,5 @@
 `timescale 1ns/1ps
-`include "defines.sv"
-module kv_block_ram_tb();
+module kv_block_ram_tb import kvp_pkg::*; ();
     logic clk, wr_en;
     logic [7:0] wr_addr, rd_addr;
     logic [255:0] wr_data, rd_data;

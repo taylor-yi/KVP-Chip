@@ -1,8 +1,5 @@
 `timescale 1ns/1ps
-`include "defines.sv"
-
-module kv_append_controller  #(parameter int NUM_PAGES = 16,
-    parameter int PAGE_W = $clog2(NUM_PAGES))(
+module kv_append_controller import kvp_pkg::*; (
             input logic clk, rst_n,
             input logic append_valid,
             input logic agent_id,
@@ -27,3 +24,4 @@ module kv_append_controller  #(parameter int NUM_PAGES = 16,
         );
 
         
+endmodule

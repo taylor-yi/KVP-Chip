@@ -1,8 +1,5 @@
 `timescale 1ns/1ps
-`include "defines.sv"
-//ADD PAGE_SIZE
-module  kv_metadata_manager #(parameter int NUM_PAGES = 16,
-    parameter int PAGE_W = $clog2(NUM_PAGES))(
+module  kv_metadata_manager import kvp_pkg::*; (
             input logic clk, rst_n,
             input logic token_req,
             
@@ -22,7 +19,7 @@ module  kv_metadata_manager #(parameter int NUM_PAGES = 16,
             offset = num_tokens % PAGE_SIZE;
         end
 
-        always_ff @(posegde clk, negedge !rst_n) begin
+        always_ff @(posedge clk, negedge rst_n) begin
             if (!rst_n) begin
                 num_tokens <= 0;
                 token_commited <= 1'b0;
@@ -33,5 +30,5 @@ module  kv_metadata_manager #(parameter int NUM_PAGES = 16,
                 token_commited <= 1'b0;
             end
         end
-        
+
 endmodule

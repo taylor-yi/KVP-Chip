@@ -3,11 +3,7 @@
 // Depth
 // Addrress width
 `timescale 1ns/1ps
-`include "defines.sv"
-module kv_block_ram #(
-    parameter int WORD_W = 256, //Stems from using BF16 x 16 dimension attention head
-    parameter int DEPTH = 256, 
-    parameter int ADDR_W = 8)(
+module kv_block_ram import kvp_pkg::*; (
     input logic clk, rst_n, wr_en, rd_en,
     input logic [ADDR_W - 1: 0] wr_addr, rd_addr,
     input logic [WORD_W - 1: 0] wr_data,

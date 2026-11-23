@@ -1,7 +1,5 @@
 `timescale 1ns/1ps
-`include "defines.sv"
-module  page_allocator #(parameter int NUM_PAGES = 16,
-    parameter int PAGE_W = $clog2(NUM_PAGES))(
+module  page_allocator import kvp_pkg::*; (
             input logic clk, rst_n,
             input logic free_en,
             input logic [PAGE_W - 1:0] free_ppage,

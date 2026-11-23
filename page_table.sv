@@ -1,10 +1,5 @@
 `timescale 1ns/1ps
-`include "defines.sv"
-
-module page_table #(
-    parameter int NUM_PAGES = 16,
-    parameter int PAGE_W = $clog2(NUM_PAGES)
-)(
+module page_table import kvp_pkg::*; (
     input logic clk, rst_n,
 
     input logic [PAGE_W - 1:0] lookup_l_page,

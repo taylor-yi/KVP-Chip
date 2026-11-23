@@ -15,8 +15,7 @@
 */
 
 `timescale 1ns/1ps
-`include "defines.sv"
-module kv_mem_interface_tb ();
+module kv_mem_interface_tb import kvp_pkg::*; ();
     localparam int WORD_W = 256;
     localparam int DEPTH = 256;
     localparam int ADDR_W = 8;

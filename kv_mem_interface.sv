@@ -1,10 +1,5 @@
 `timescale 1ns/1ps
-`include "defines.sv"
-module kv_mem_interface #(
-    parameter int WORD_W = 256,
-    parameter int DEPTH = 256,
-    parameter int ADDR_W = 8
-)(
+module kv_mem_interface import kvp_pkg::*; (
     input logic rst_n, clk,
 
     input logic req_valid, req_write,
@@ -25,14 +20,14 @@ module kv_mem_interface #(
 
     logic wr_en, rd_en, accept ;
 
-    kv_block_ram #(.WORD_W(WORD_W), .DEPTH(DEPTH), .ADDR_W(ADDR_W)) k_ram (
+    kv_block_ram k_ram (
         .clk(clk), .rst_n(rst_n), .wr_en(wr_en), .rd_en(rd_en),
         .wr_addr(req_addr),
         .rd_addr(req_addr),
         .wr_data(req_data_k),
         .rd_data(resp_data_k));
 
-    kv_block_ram #(.WORD_W(WORD_W), .DEPTH(DEPTH), .ADDR_W(ADDR_W)) v_ram (
+    kv_block_ram v_ram (
         .clk(clk), .rst_n(rst_n), .wr_en(wr_en), .rd_en(rd_en),
         .wr_addr(req_addr),
         .rd_addr(req_addr),
