@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+`include "defines.sv"
 module kv_mem_interface #(
     parameter int WORD_W = 256,
     parameter int DEPTH = 256,

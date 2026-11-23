@@ -15,6 +15,7 @@
 */
 
 `timescale 1ns/1ps
+`include "defines.sv"
 module kv_mem_interface_tb ();
     localparam int WORD_W = 256;
     localparam int DEPTH = 256;

@@ -1,4 +1,6 @@
 `timescale 1ns/1ps
+`include "defines.sv"
+
 module page_allocator_tb();
             localparam int NUM_PAGES = 16;
             localparam int PAGE_W = $clog2(NUM_PAGES);

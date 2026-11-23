@@ -1,0 +1,2 @@
+`ifndef ACCEL_DEFINES_H
+`define ACCEL_DEFINES_H

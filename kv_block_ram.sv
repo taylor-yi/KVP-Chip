@@ -3,6 +3,7 @@
 // Depth
 // Addrress width
 `timescale 1ns/1ps
+`include "defines.sv"
 module kv_block_ram #(
     parameter int WORD_W = 256, //Stems from using BF16 x 16 dimension attention head
     parameter int DEPTH = 256, 

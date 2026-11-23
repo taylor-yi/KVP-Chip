@@ -1,4 +1,6 @@
 `timescale 1ns/1ps
+`include "defines.sv"
+
 module page_table #(
     parameter int NUM_PAGES = 16,
     parameter int PAGE_W = $clog2(NUM_PAGES)
