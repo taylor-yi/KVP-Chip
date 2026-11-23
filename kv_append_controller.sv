@@ -21,7 +21,7 @@ module kv_append_controller import kvp_pkg::*; (
             output token_req,
 
             input [PAGE_W - 1:0] logical_page,
-            input [OFFSET - 1:0] offset,
+            input [OFFSET_W - 1:0] offset,
 
             // KV_address_generator, hooked up internally
             // output logic [PAGE_W - 1:0] physical_page,
@@ -47,7 +47,7 @@ logic [ADDR_W-1:0] cur_addr;
 kv_address_generator addr_machine (
     .clk(clk), 
     .rst_n(rst_n), 
-    .phyisical_page(cur_ppage),
+    .physical_page(cur_ppage),
     .offset(offset),
     .addr(cur_addr));
 
