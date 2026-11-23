@@ -25,7 +25,14 @@ module kv_append_controller import kvp_pkg::*; (
             input [OFFSET - 1:0] offset,
 
             // KV_address_generator
-            
+            output logic [PAGE_W - 1:0] physical_page,
+            output logic [OFFSET_W - 1:0] offset,
+            output logic request_valid,
+            output logic is_write,
+
+            input logic [ADDR_W - 1:0] k_addr,
+            input logic [ADDR_W - 1:0] v_addr,
+            input logic address_valid
 
             // KV_memory_interface
             output logic req_valid,
@@ -41,5 +48,20 @@ module kv_append_controller import kvp_pkg::*; (
             input logic req_ready
         );
 
-        
+typedef enum logic [2:0] {IDLE, CHECK, ALLOCATE, ADDRESS, WRITE, DONE} state_t;
+state_t state, next_state;
+
+case(state)
+
+
+endcase
+
+always_ff @(posedge clk, negedge rst_n) begin
+    if(!rst_n) begin
+        state <= '0;
+    end else begin
+        state <= next_state;
+    end
+end
+   
 endmodule
