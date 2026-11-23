@@ -25,7 +25,7 @@ module kv_append_controller import kvp_pkg::*; (
             input [OFFSET - 1:0] offset,
 
             // KV_address_generator
-
+            
 
             // KV_memory_interface
             output logic req_valid,
