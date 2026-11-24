@@ -253,6 +253,10 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root___stl_sequent__TOP__0(Vpage_alloc
         vlSelfRef.page_allocator_tb__DOT__alloc_page = 0x0fU;
         vlSelfRef.page_allocator_tb__DOT__dut__DOT__found_flag = 1U;
     }
+    vlSelfRef.page_allocator_tb__DOT__free_ok = ((~ 
+                                                  ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
+                                                   >> (IData)(vlSelfRef.page_allocator_tb__DOT__free_ppage))) 
+                                                 & (IData)(vlSelfRef.page_allocator_tb__DOT__free_en));
 }
 
 bool Vpage_allocator_tb___024root___trigger_anySet__ico(const VlUnpacked<QData/*63:0*/, 1> &in);

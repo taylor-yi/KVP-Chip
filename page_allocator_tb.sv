@@ -55,7 +55,14 @@ module page_allocator_tb import kvp_pkg::*; ();
                 end
                 free_en = 1;
                 free_ppage = PAGE_W'(page);
+
                 @(negedge clk);
+                
+                if(free_ok !== 1'b1) begin
+                    errors++;
+                    $error("[%0t] ERROR: free_ok not high after freeing page %0d.", $time, page);
+                end
+
                 free_en = 0;
                 free_ppage = '0;
             endtask
@@ -189,22 +196,12 @@ module page_allocator_tb import kvp_pkg::*; ();
                     $error("[%0t] ERROR: used_map[7] still set after freeing page 7.", $time);
                 end
 
-                if(free_ok !== 1'b1) begin
-                    errors++;
-                    $error("[%0t] ERROR: free_ok not high after freeing page 7.", $time);
-                end
-
                 // Free a higher page
                 free_page(10);
 
                 if(dut.used_map[10] !== 1'b0) begin
                     errors++;
                     $error("[%0t] ERROR: used_map[10] still set after freeing page 10.", $time);
-                end
-
-                if(free_ok !== 1'b1) begin
-                    errors++;
-                    $error("[%0t] ERROR: free_ok not high after freeing page 10.", $time);
                 end
 
                 @(negedge clk);

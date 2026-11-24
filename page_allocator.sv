@@ -22,7 +22,7 @@ module  page_allocator import kvp_pkg::*; (
         assign alloc_ok = alloc_req & !full;
         assign alloc_error = alloc_req & full;
 
-        assign free_ok = free_en && used_map[free_ppage];
+        assign free_ok = free_en && ~used_map[free_ppage];
 
         // Priority encoder, find the lowest bit thats 0
         always_comb begin

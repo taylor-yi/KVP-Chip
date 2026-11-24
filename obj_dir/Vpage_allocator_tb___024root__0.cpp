@@ -90,15 +90,19 @@ bool Vpage_allocator_tb___024root___eval_act(Vpage_allocator_tb___024root* vlSel
         Vpage_allocator_tb___024root___timing_resume(vlSelf);
         {
             // Inlined CFunc: _eval_body__act
-            if ((4ULL & vlSelfRef.__VactTriggered[0U])) {
+            if ((6ULL & vlSelfRef.__VactTriggered[0U])) {
                 {
-                    // Inlined CFunc: _act_sequent__TOP__0
+                    // Inlined CFunc: _act_comb__TOP__0
                     vlSelfRef.page_allocator_tb__DOT__alloc_ok 
                         = ((~ (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))) 
                            & (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req));
                     vlSelfRef.page_allocator_tb__DOT__alloc_error 
                         = ((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req) 
                            & (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)));
+                    vlSelfRef.page_allocator_tb__DOT__free_ok 
+                        = ((~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
+                               >> (IData)(vlSelfRef.page_allocator_tb__DOT__free_ppage))) 
+                           & (IData)(vlSelfRef.page_allocator_tb__DOT__free_en));
                 }
             }
         }
@@ -138,15 +142,19 @@ bool Vpage_allocator_tb___024root___eval_nba(Vpage_allocator_tb___024root* vlSel
                 Vpage_allocator_tb___024root___nba_sequent__TOP__0(vlSelf);
                 vlSelfRef.__Vm_traceActivity[3U] = 1U;
             }
-            if ((5ULL & vlSelfRef.__VnbaTriggered[0U])) {
+            if ((7ULL & vlSelfRef.__VnbaTriggered[0U])) {
                 {
-                    // Inlined CFunc: _act_sequent__TOP__0
+                    // Inlined CFunc: _act_comb__TOP__0
                     vlSelfRef.page_allocator_tb__DOT__alloc_ok 
                         = ((~ (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))) 
                            & (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req));
                     vlSelfRef.page_allocator_tb__DOT__alloc_error 
                         = ((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req) 
                            & (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)));
+                    vlSelfRef.page_allocator_tb__DOT__free_ok 
+                        = ((~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
+                               >> (IData)(vlSelfRef.page_allocator_tb__DOT__free_ppage))) 
+                           & (IData)(vlSelfRef.page_allocator_tb__DOT__free_en));
                 }
             }
         }
@@ -216,16 +224,13 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
     vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
     vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_page = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_ok = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_error = 0U;
     Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
                                                              "@(negedge page_allocator_tb.clk)");
     co_await vlSelfRef.__VtrigSched_hb34f2848__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         38);
+                                                         35);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__rst_n = 1U;
     vlSelfRef.page_allocator_tb__DOT__test_errors = vlSelfRef.page_allocator_tb__DOT__errors;
@@ -237,7 +242,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         79);
+                                                         83);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__rst_n = 1U;
     Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
@@ -246,39 +251,39 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         81);
+                                                         85);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY(((0U != (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:85: Assertion failed in %m: [%0t] ERROR: Alloc page is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:89: Assertion failed in %m: [%0t] ERROR: Alloc page is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 85, "");
+        VL_STOP_MT("page_allocator_tb.sv", 89, "");
     }
     if (VL_UNLIKELY((vlSelfRef.page_allocator_tb__DOT__alloc_ok))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:90: Assertion failed in %m: [%0t] ERROR: Alloc_ok is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:94: Assertion failed in %m: [%0t] ERROR: Alloc_ok is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 90, "");
+        VL_STOP_MT("page_allocator_tb.sv", 94, "");
     }
     if (VL_UNLIKELY((vlSelfRef.page_allocator_tb__DOT__alloc_error))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:95: Assertion failed in %m: [%0t] ERROR: Alloc_error is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:99: Assertion failed in %m: [%0t] ERROR: Alloc_error is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 95, "");
+        VL_STOP_MT("page_allocator_tb.sv", 99, "");
     }
     if (VL_UNLIKELY(((0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:100: Assertion failed in %m: [%0t] ERROR: Full is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:104: Assertion failed in %m: [%0t] ERROR: Full is not 0. Reset failed.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 100, "");
+        VL_STOP_MT("page_allocator_tb.sv", 104, "");
     }
     vlSelfRef.page_allocator_tb__DOT__checks = ((IData)(1U) 
                                                 + vlSelfRef.page_allocator_tb__DOT__checks);
@@ -286,9 +291,6 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
     vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
     vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_page = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_ok = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_error = 0U;
     if ((vlSelfRef.page_allocator_tb__DOT__test_errors 
          == vlSelfRef.page_allocator_tb__DOT__errors)) {
         VL_WRITEF_NX("Test 1 Passed: Reset behavior as expected%d\n",1
@@ -303,7 +305,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         38);
+                                                         35);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__rst_n = 1U;
     vlSelfRef.page_allocator_tb__DOT__test_errors = vlSelfRef.page_allocator_tb__DOT__errors;
@@ -317,7 +319,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                              nullptr, 
                                                              "@(negedge page_allocator_tb.clk)", 
                                                              "page_allocator_tb.sv", 
-                                                             44);
+                                                             41);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
         Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
@@ -326,7 +328,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                              nullptr, 
                                                              "@(negedge page_allocator_tb.clk)", 
                                                              "page_allocator_tb.sv", 
-                                                             46);
+                                                             43);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_page_allocator_tb__DOT__allocate_all__2__unnamedblk1__DOT__i 
             = ((IData)(1U) + __Vtask_page_allocator_tb__DOT__allocate_all__2__unnamedblk1__DOT__i);
@@ -334,121 +336,153 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
     if (VL_UNLIKELY(((1U & (~ (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:119: Assertion failed in %m: [%0t] ERROR: Full is not 1.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:123: Assertion failed in %m: [%0t] ERROR: Full is not 1.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 119, "");
+        VL_STOP_MT("page_allocator_tb.sv", 123, "");
     }
     if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 1U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 2U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 3U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 4U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 5U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 6U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 7U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 8U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 9U)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 0x0aU)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 0x0bU)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 0x0cU)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 0x0dU)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 0x0eU)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                >> 0x0fU)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:125: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:130: Assertion failed in %m: [%0t] ERROR: Used_map not funcitoning correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk3", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 125, "");
+        VL_STOP_MT("page_allocator_tb.sv", 130, "");
     }
     vlSelfRef.page_allocator_tb__DOT__alloc_req = 1U;
     Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
@@ -457,19 +491,23 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         131);
+                                                         136);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_error)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:134: Assertion failed in %m: [%0t] ERROR: Alloc error not asserted, page allocator should be full.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:140: Assertion failed in %m: [%0t] ERROR: Alloc error not asserted, page allocator should be full.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 134, "");
+        VL_STOP_MT("page_allocator_tb.sv", 140, "");
     }
     if (VL_UNLIKELY((vlSelfRef.page_allocator_tb__DOT__alloc_ok))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:138: Assertion failed in %m: [%0t] ERROR: Alloc ok asserted when it should not be.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:145: Assertion failed in %m: [%0t] ERROR: Alloc ok asserted when it should not be.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 138, "");
+        VL_STOP_MT("page_allocator_tb.sv", 145, "");
     }
     vlSelfRef.page_allocator_tb__DOT__checks = ((IData)(1U) 
                                                 + vlSelfRef.page_allocator_tb__DOT__checks);
@@ -477,9 +515,6 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
     vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
     vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_page = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_ok = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_error = 0U;
     if ((vlSelfRef.page_allocator_tb__DOT__test_errors 
          == vlSelfRef.page_allocator_tb__DOT__errors)) {
         VL_WRITEF_NX("Test 2 Passed: 16 pages filled, signals verified%d\n",1
@@ -494,39 +529,47 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         38);
+                                                         35);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__rst_n = 1U;
     vlSelfRef.page_allocator_tb__DOT__test_errors = vlSelfRef.page_allocator_tb__DOT__errors;
     page_allocator_tb__DOT__unnamedblk4__DOT__i = 0U;
-    while (VL_GTS_III(32, 0x0000000fU, page_allocator_tb__DOT__unnamedblk4__DOT__i)) {
+    while (VL_GTS_III(32, 0x00000010U, page_allocator_tb__DOT__unnamedblk4__DOT__i)) {
         vlSelfRef.page_allocator_tb__DOT__alloc_req = 1U;
+        co_await vlSelfRef.__VdlySched.delay(0x00000000000003e8ULL, 
+                                             nullptr, 
+                                             "page_allocator_tb.sv", 
+                                             161);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        if (VL_UNLIKELY((((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page) 
+                          != (0x0000000fU & page_allocator_tb__DOT__unnamedblk4__DOT__i))))) {
+            vlSelfRef.page_allocator_tb__DOT__errors 
+                = ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+            VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:164: Assertion failed in %m: [%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.\n",6, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk4", 'T',-9
+                         , '#',64,VL_TIME_UNITED_Q(1000)
+                         , '#',64,VL_TIME_UNITED_Q(1000)
+                         , '~',32,page_allocator_tb__DOT__unnamedblk4__DOT__i
+                         , '#',4,(IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page));
+            VL_STOP_MT("page_allocator_tb.sv", 164, "");
+        }
         Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
                                                                  "@(negedge page_allocator_tb.clk)");
         co_await vlSelfRef.__VtrigSched_hb34f2848__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(negedge page_allocator_tb.clk)", 
                                                              "page_allocator_tb.sv", 
-                                                             154);
+                                                             166);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
-        if (VL_UNLIKELY((((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page) 
-                          != ((IData)(1U) + (0x0000000fU 
-                                             & page_allocator_tb__DOT__unnamedblk4__DOT__i)))))) {
-            VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:158: Assertion failed in %m: [%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.\n",6, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk4", 'T',-9
-                         , '#',64,VL_TIME_UNITED_Q(1000)
-                         , '#',64,VL_TIME_UNITED_Q(1000)
-                         , '~',4,page_allocator_tb__DOT__unnamedblk4__DOT__i
-                         , '#',4,(IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page));
-            VL_STOP_MT("page_allocator_tb.sv", 158, "");
-        }
         if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
                                    >> (0x0000000fU 
                                        & page_allocator_tb__DOT__unnamedblk4__DOT__i))))))) {
-            VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:162: Assertion failed in %m: [%0t] ERROR: Used map not filled.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk4", 'T',-9
+            vlSelfRef.page_allocator_tb__DOT__errors 
+                = ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+            VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:171: Assertion failed in %m: [%0t] ERROR: Used map not filled.\n",4, 'M',vlSymsp->name(),"page_allocator_tb.unnamedblk4", 'T',-9
                          , '#',64,VL_TIME_UNITED_Q(1000)
                          , '#',64,VL_TIME_UNITED_Q(1000));
-            VL_STOP_MT("page_allocator_tb.sv", 162, "");
+            VL_STOP_MT("page_allocator_tb.sv", 171, "");
         }
         Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
                                                                  "@(negedge page_allocator_tb.clk)");
@@ -534,7 +577,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                              nullptr, 
                                                              "@(negedge page_allocator_tb.clk)", 
                                                              "page_allocator_tb.sv", 
-                                                             164);
+                                                             173);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         page_allocator_tb__DOT__unnamedblk4__DOT__i 
             = ((IData)(1U) + page_allocator_tb__DOT__unnamedblk4__DOT__i);
@@ -543,9 +586,6 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
     vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
     vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_page = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_ok = 0U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_error = 0U;
     if ((vlSelfRef.page_allocator_tb__DOT__test_errors 
          == vlSelfRef.page_allocator_tb__DOT__errors)) {
         VL_WRITEF_NX("Test 3 Passed: 16 Consecutive page requests, correct pages identified.\n",0);
@@ -558,7 +598,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         38);
+                                                         35);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__rst_n = 1U;
     vlSelfRef.page_allocator_tb__DOT__test_errors = vlSelfRef.page_allocator_tb__DOT__errors;
@@ -574,7 +614,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                              nullptr, 
                                                              "@(negedge page_allocator_tb.clk)", 
                                                              "page_allocator_tb.sv", 
-                                                             44);
+                                                             41);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
         Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
@@ -583,7 +623,7 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                              nullptr, 
                                                              "@(negedge page_allocator_tb.clk)", 
                                                              "page_allocator_tb.sv", 
-                                                             46);
+                                                             43);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_page_allocator_tb__DOT__allocate_all__6__unnamedblk1__DOT__i 
             = ((IData)(1U) + __Vtask_page_allocator_tb__DOT__allocate_all__6__unnamedblk1__DOT__i);
@@ -591,10 +631,10 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
     __Vtask_page_allocator_tb__DOT__free_page__8__page = 7U;
     if (VL_UNLIKELY(((VL_LTS_III(32, 0x0000000fU, __Vtask_page_allocator_tb__DOT__free_page__8__page) 
                       | VL_GTS_III(32, 0U, __Vtask_page_allocator_tb__DOT__free_page__8__page))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:57: Assertion failed in %m: [%0t] ERROR: Not within the bounds\n",4, 'M',vlSymsp->name(),"page_allocator_tb.free_page", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:54: Assertion failed in %m: [%0t] ERROR: Not within the bounds\n",4, 'M',vlSymsp->name(),"page_allocator_tb.free_page", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 57, "");
+        VL_STOP_MT("page_allocator_tb.sv", 54, "");
     }
     vlSelfRef.page_allocator_tb__DOT__free_en = 1U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 
@@ -605,49 +645,34 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         61);
+                                                         59);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
-    Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
-                                                             "@(negedge page_allocator_tb.clk)");
-    co_await vlSelfRef.__VtrigSched_hb34f2848__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(negedge page_allocator_tb.clk)", 
-                                                         "page_allocator_tb.sv", 
-                                                         181);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    if (VL_UNLIKELY(((0x00000040U & (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))))) {
-        vlSelfRef.page_allocator_tb__DOT__errors = 
-            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:185: Assertion failed in %m: [%0t] ERROR: Used map not updated on free 1. Index 8.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
-                     , '#',64,VL_TIME_UNITED_Q(1000)
-                     , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 185, "");
-    }
     if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.page_allocator_tb__DOT__free_ok)))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:190: Assertion failed in %m: [%0t] ERROR: Free_ok not driven correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:63: Assertion failed in %m: [%0t] ERROR: free_ok not high after freeing page %0d.\n",5, 'M',vlSymsp->name(),"page_allocator_tb.free_page", 'T',-9
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '~',32,__Vtask_page_allocator_tb__DOT__free_page__8__page);
+        VL_STOP_MT("page_allocator_tb.sv", 63, "");
+    }
+    if (VL_UNLIKELY(((0x00000080U & (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))))) {
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:196: Assertion failed in %m: [%0t] ERROR: used_map[7] still set after freeing page 7.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 190, "");
+        VL_STOP_MT("page_allocator_tb.sv", 196, "");
     }
-    Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
-                                                             "@(negedge page_allocator_tb.clk)");
-    co_await vlSelfRef.__VtrigSched_hb34f2848__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(negedge page_allocator_tb.clk)", 
-                                                         "page_allocator_tb.sv", 
-                                                         193);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_page_allocator_tb__DOT__free_page__9__page = 0x0000000aU;
     if (VL_UNLIKELY(((VL_LTS_III(32, 0x0000000fU, __Vtask_page_allocator_tb__DOT__free_page__9__page) 
                       | VL_GTS_III(32, 0U, __Vtask_page_allocator_tb__DOT__free_page__9__page))))) {
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:57: Assertion failed in %m: [%0t] ERROR: Not within the bounds\n",4, 'M',vlSymsp->name(),"page_allocator_tb.free_page", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:54: Assertion failed in %m: [%0t] ERROR: Not within the bounds\n",4, 'M',vlSymsp->name(),"page_allocator_tb.free_page", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 57, "");
+        VL_STOP_MT("page_allocator_tb.sv", 54, "");
     }
     vlSelfRef.page_allocator_tb__DOT__free_en = 1U;
     vlSelfRef.page_allocator_tb__DOT__free_ppage = 
@@ -658,30 +683,23 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         61);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
-    vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
-    Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
-                                                             "@(negedge page_allocator_tb.clk)");
-    co_await vlSelfRef.__VtrigSched_hb34f2848__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(negedge page_allocator_tb.clk)", 
-                                                         "page_allocator_tb.sv", 
-                                                         196);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    if (VL_UNLIKELY(((0x00000200U & (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))))) {
-        vlSelfRef.page_allocator_tb__DOT__errors = 
-            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:199: Assertion failed in %m: [%0t] ERROR: Used map not updated on free 1. Index 8.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
-                     , '#',64,VL_TIME_UNITED_Q(1000)
-                     , '#',64,VL_TIME_UNITED_Q(1000));
-        VL_STOP_MT("page_allocator_tb.sv", 199, "");
-    }
+                                                         59);
     if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.page_allocator_tb__DOT__free_ok)))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:204: Assertion failed in %m: [%0t] ERROR: Free_ok not driven correctly.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:63: Assertion failed in %m: [%0t] ERROR: free_ok not high after freeing page %0d.\n",5, 'M',vlSymsp->name(),"page_allocator_tb.free_page", 'T',-9
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '~',32,__Vtask_page_allocator_tb__DOT__free_page__9__page);
+        VL_STOP_MT("page_allocator_tb.sv", 63, "");
+    }
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.page_allocator_tb__DOT__free_en = 0U;
+    vlSelfRef.page_allocator_tb__DOT__free_ppage = 0U;
+    if (VL_UNLIKELY(((0x00000400U & (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))))) {
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:204: Assertion failed in %m: [%0t] ERROR: used_map[10] still set after freeing page 10.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
         VL_STOP_MT("page_allocator_tb.sv", 204, "");
@@ -695,29 +713,23 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          207);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.page_allocator_tb__DOT__alloc_req = 1U;
-    Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(vlSelf, 
-                                                             "@(negedge page_allocator_tb.clk)");
-    co_await vlSelfRef.__VtrigSched_hb34f2848__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(negedge page_allocator_tb.clk)", 
-                                                         "page_allocator_tb.sv", 
-                                                         211);
+    co_await vlSelfRef.__VdlySched.delay(0x00000000000003e8ULL, 
+                                         nullptr, "page_allocator_tb.sv", 
+                                         213);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
     if (VL_UNLIKELY(((7U != (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:216: Assertion failed in %m: [%0t] ERROR: Incorrect page allocated. Expected: 7, got %0d.\n",5, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:216: Assertion failed in %m: [%0t] ERROR: Incorrect page offered. Expected: 7, got %0d.\n",5, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',4,(IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page));
         VL_STOP_MT("page_allocator_tb.sv", 216, "");
     }
-    if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
-                               >> 6U)))))) {
+    if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_ok)))))) {
         vlSelfRef.page_allocator_tb__DOT__errors = 
             ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
-        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:221: Assertion failed in %m: [%0t] ERROR: Used map not filled.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:221: Assertion failed in %m: [%0t] ERROR: alloc_ok not high while a page is free.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
                      , '#',64,VL_TIME_UNITED_Q(1000)
                      , '#',64,VL_TIME_UNITED_Q(1000));
         VL_STOP_MT("page_allocator_tb.sv", 221, "");
@@ -728,15 +740,34 @@ VlCoroutine Vpage_allocator_tb___024root___eval_initial__TOP__Vtiming__1(Vpage_a
                                                          nullptr, 
                                                          "@(negedge page_allocator_tb.clk)", 
                                                          "page_allocator_tb.sv", 
-                                                         223);
+                                                         224);
+    if (VL_UNLIKELY(((1U & (~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
+                               >> 7U)))))) {
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:229: Assertion failed in %m: [%0t] ERROR: used_map[7] not set after reallocating it.\n",4, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '#',64,VL_TIME_UNITED_Q(1000));
+        VL_STOP_MT("page_allocator_tb.sv", 229, "");
+    }
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.page_allocator_tb__DOT__alloc_req = 0U;
+    if (VL_UNLIKELY(((0x0aU != (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page))))) {
+        vlSelfRef.page_allocator_tb__DOT__errors = 
+            ((IData)(1U) + vlSelfRef.page_allocator_tb__DOT__errors);
+        VL_WRITEF_NX("[%0t] %%Error: page_allocator_tb.sv:235: Assertion failed in %m: [%0t] ERROR: Next free page should be 10, got %0d.\n",5, 'M',vlSymsp->name(),"page_allocator_tb", 'T',-9
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '#',64,VL_TIME_UNITED_Q(1000)
+                     , '#',4,(IData)(vlSelfRef.page_allocator_tb__DOT__alloc_page));
+        VL_STOP_MT("page_allocator_tb.sv", 235, "");
+    }
     if ((vlSelfRef.page_allocator_tb__DOT__test_errors 
          == vlSelfRef.page_allocator_tb__DOT__errors)) {
         VL_WRITEF_NX("Test 4 Passed: Freed page successfully and refilled correctly.\n",0);
     } else {
         VL_WRITEF_NX("Test 4 Failed: Page not freed properly.\n",0);
     }
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    VL_FINISH_MT("page_allocator_tb.sv", 231, "");
+    VL_FINISH_MT("page_allocator_tb.sv", 244, "");
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
@@ -793,9 +824,6 @@ void Vpage_allocator_tb___024root___nba_sequent__TOP__0(Vpage_allocator_tb___024
             __Vdly__page_allocator_tb__DOT__dut__DOT__used_map 
                 = ((~ ((IData)(1U) << (IData)(vlSelfRef.page_allocator_tb__DOT__free_ppage))) 
                    & (IData)(__Vdly__page_allocator_tb__DOT__dut__DOT__used_map));
-            vlSelfRef.page_allocator_tb__DOT__free_ok = 1U;
-        } else {
-            vlSelfRef.page_allocator_tb__DOT__free_ok = 0U;
         }
     } else {
         __Vdly__page_allocator_tb__DOT__dut__DOT__used_map = 0U;
@@ -945,10 +973,6 @@ void Vpage_allocator_tb___024root____VbeforeTrig_hb34f2848__0(Vpage_allocator_tb
     vlSelfRef.__Vtrigprevexpr___TOP__page_allocator_tb__DOT__clk__0 
         = vlSelfRef.page_allocator_tb__DOT__clk;
     if ((4ULL & __VTmp[0U])) {
-        vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);
-        vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);
-        vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);
-        vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);
         vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);
         vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);
         vlSelfRef.__VtrigSched_hb34f2848__0.ready(__VeventDescription);

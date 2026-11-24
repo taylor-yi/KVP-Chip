@@ -12,7 +12,7 @@ Vpage_allocator_tb__Syms::Vpage_allocator_tb__Syms(VerilatedContext* contextp, c
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(417);
+    Verilated::stackCheck(381);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);

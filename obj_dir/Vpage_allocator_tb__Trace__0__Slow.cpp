@@ -24,10 +24,10 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root__trace_init_sub__TOP__0(Vpage_all
     VL_TRACE_DECL_BIT(tracep,c+1,0,"free_en",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
     VL_TRACE_DECL_BUS(tracep,c+2,0,"free_ppage",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 3,0);
     VL_TRACE_DECL_BIT(tracep,c+3,0,"alloc_req",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BUS(tracep,c+10,0,"alloc_page",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 3,0);
-    VL_TRACE_DECL_BIT(tracep,c+11,0,"alloc_ok",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BIT(tracep,c+12,0,"alloc_error",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BIT(tracep,c+5,0,"free_ok",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BUS(tracep,c+5,0,"alloc_page",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 3,0);
+    VL_TRACE_DECL_BIT(tracep,c+10,0,"alloc_ok",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BIT(tracep,c+11,0,"alloc_error",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BIT(tracep,c+12,0,"free_ok",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
     VL_TRACE_DECL_BUS(tracep,c+13,0,"checks",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::INT, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+14,0,"errors",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::INT, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+4,0,"test_errors",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::INT, 31,0);
@@ -37,10 +37,10 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root__trace_init_sub__TOP__0(Vpage_all
     VL_TRACE_DECL_BIT(tracep,c+1,0,"free_en",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
     VL_TRACE_DECL_BUS(tracep,c+2,0,"free_ppage",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 3,0);
     VL_TRACE_DECL_BIT(tracep,c+3,0,"alloc_req",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BUS(tracep,c+10,0,"alloc_page",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 3,0);
-    VL_TRACE_DECL_BIT(tracep,c+11,0,"alloc_ok",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BIT(tracep,c+12,0,"alloc_error",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BIT(tracep,c+5,0,"free_ok",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BUS(tracep,c+5,0,"alloc_page",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 3,0);
+    VL_TRACE_DECL_BIT(tracep,c+10,0,"alloc_ok",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BIT(tracep,c+11,0,"alloc_error",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BIT(tracep,c+12,0,"free_ok",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
     VL_TRACE_DECL_BUS(tracep,c+6,0,"used_map",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 15,0);
     VL_TRACE_DECL_BIT(tracep,c+7,0,"full",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
     VL_TRACE_DECL_BIT(tracep,c+8,0,"found_flag",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC);
@@ -135,14 +135,18 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root__trace_full_0_sub_0(Vpage_allocat
     bufp->fullCData(oldp+2,(vlSelfRef.page_allocator_tb__DOT__free_ppage),4);
     bufp->fullBit(oldp+3,(vlSelfRef.page_allocator_tb__DOT__alloc_req));
     bufp->fullIData(oldp+4,(vlSelfRef.page_allocator_tb__DOT__test_errors),32);
-    bufp->fullBit(oldp+5,(vlSelfRef.page_allocator_tb__DOT__free_ok));
+    bufp->fullCData(oldp+5,(vlSelfRef.page_allocator_tb__DOT__alloc_page),4);
     bufp->fullSData(oldp+6,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map),16);
     bufp->fullBit(oldp+7,((0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))));
     bufp->fullBit(oldp+8,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__found_flag));
     bufp->fullBit(oldp+9,(vlSelfRef.page_allocator_tb__DOT__clk));
-    bufp->fullCData(oldp+10,(vlSelfRef.page_allocator_tb__DOT__alloc_page),4);
-    bufp->fullBit(oldp+11,(vlSelfRef.page_allocator_tb__DOT__alloc_ok));
-    bufp->fullBit(oldp+12,(vlSelfRef.page_allocator_tb__DOT__alloc_error));
+    bufp->fullBit(oldp+10,(((~ (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))) 
+                            & (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req))));
+    bufp->fullBit(oldp+11,(((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req) 
+                            & (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)))));
+    bufp->fullBit(oldp+12,(((~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
+                                >> (IData)(vlSelfRef.page_allocator_tb__DOT__free_ppage))) 
+                            & (IData)(vlSelfRef.page_allocator_tb__DOT__free_en))));
     bufp->fullIData(oldp+13,(vlSelfRef.page_allocator_tb__DOT__checks),32);
     bufp->fullIData(oldp+14,(vlSelfRef.page_allocator_tb__DOT__errors),32);
 }

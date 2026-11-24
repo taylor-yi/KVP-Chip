@@ -31,15 +31,19 @@ void Vpage_allocator_tb___024root__trace_chg_0_sub_0(Vpage_allocator_tb___024roo
         bufp->chgIData(oldp+4,(vlSelfRef.page_allocator_tb__DOT__test_errors),32);
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[3U]))) {
-        bufp->chgBit(oldp+5,(vlSelfRef.page_allocator_tb__DOT__free_ok));
+        bufp->chgCData(oldp+5,(vlSelfRef.page_allocator_tb__DOT__alloc_page),4);
         bufp->chgSData(oldp+6,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map),16);
         bufp->chgBit(oldp+7,((0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))));
         bufp->chgBit(oldp+8,(vlSelfRef.page_allocator_tb__DOT__dut__DOT__found_flag));
     }
     bufp->chgBit(oldp+9,(vlSelfRef.page_allocator_tb__DOT__clk));
-    bufp->chgCData(oldp+10,(vlSelfRef.page_allocator_tb__DOT__alloc_page),4);
-    bufp->chgBit(oldp+11,(vlSelfRef.page_allocator_tb__DOT__alloc_ok));
-    bufp->chgBit(oldp+12,(vlSelfRef.page_allocator_tb__DOT__alloc_error));
+    bufp->chgBit(oldp+10,(((~ (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map))) 
+                           & (IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req))));
+    bufp->chgBit(oldp+11,(((IData)(vlSelfRef.page_allocator_tb__DOT__alloc_req) 
+                           & (0x0000ffffU == (IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map)))));
+    bufp->chgBit(oldp+12,(((~ ((IData)(vlSelfRef.page_allocator_tb__DOT__dut__DOT__used_map) 
+                               >> (IData)(vlSelfRef.page_allocator_tb__DOT__free_ppage))) 
+                           & (IData)(vlSelfRef.page_allocator_tb__DOT__free_en))));
     bufp->chgIData(oldp+13,(vlSelfRef.page_allocator_tb__DOT__checks),32);
     bufp->chgIData(oldp+14,(vlSelfRef.page_allocator_tb__DOT__errors),32);
 }
