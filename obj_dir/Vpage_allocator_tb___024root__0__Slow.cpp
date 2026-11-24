@@ -13,6 +13,7 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root___eval_static(Vpage_allocator_tb_
     // Body
     {
         // Inlined CFunc: _eval_static__TOP
+        vlSelfRef.page_allocator_tb__DOT__checks = 0U;
         vlSelfRef.page_allocator_tb__DOT__errors = 0U;
     }
     vlSelfRef.__Vtrigprevexpr___TOP__page_allocator_tb__DOT__clk__0 
@@ -304,6 +305,7 @@ VL_ATTR_COLD void Vpage_allocator_tb___024root___ctor_var_reset(Vpage_allocator_
     vlSelf->page_allocator_tb__DOT__alloc_page = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 13655309637428967147ull);
     vlSelf->page_allocator_tb__DOT__alloc_ok = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16075184679322796688ull);
     vlSelf->page_allocator_tb__DOT__alloc_error = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15661052311875036391ull);
+    vlSelf->page_allocator_tb__DOT__free_ok = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12567063274732505550ull);
     vlSelf->page_allocator_tb__DOT__test_errors = 0;
     vlSelf->page_allocator_tb__DOT__dut__DOT__used_map = VL_SCOPED_RAND_RESET_I(16, __VscopeHash, 12067140572811998262ull);
     vlSelf->page_allocator_tb__DOT__dut__DOT__found_flag = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11309020594799264949ull);

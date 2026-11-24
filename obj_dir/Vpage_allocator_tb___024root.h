@@ -23,9 +23,11 @@ class alignas(VL_CACHE_LINE_BYTES) Vpage_allocator_tb___024root final {
     CData/*3:0*/ page_allocator_tb__DOT__alloc_page;
     CData/*0:0*/ page_allocator_tb__DOT__alloc_ok;
     CData/*0:0*/ page_allocator_tb__DOT__alloc_error;
+    CData/*0:0*/ page_allocator_tb__DOT__free_ok;
     CData/*0:0*/ page_allocator_tb__DOT__dut__DOT__found_flag;
     CData/*0:0*/ __Vtrigprevexpr___TOP__page_allocator_tb__DOT__clk__0;
     SData/*15:0*/ page_allocator_tb__DOT__dut__DOT__used_map;
+    IData/*31:0*/ page_allocator_tb__DOT__checks;
     IData/*31:0*/ page_allocator_tb__DOT__errors;
     IData/*31:0*/ page_allocator_tb__DOT__test_errors;
     IData/*31:0*/ __Vi;

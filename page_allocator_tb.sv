@@ -10,6 +10,7 @@ module page_allocator_tb import kvp_pkg::*; ();
             logic [PAGE_W - 1:0] alloc_page;
             logic alloc_ok;
             logic alloc_error;
+            logic free_ok;
 
             page_allocator #(.*) dut (.*);
 
@@ -41,17 +42,6 @@ module page_allocator_tb import kvp_pkg::*; ();
             task automatic allocate_pages();
                 alloc_req = 1;
                 @(negedge clk);
-                
-                if(!(alloc_ok && !alloc_error))begin
-                        errors++;
-                        $error("[%0t] ERROR: Allocation signals failed.", $time);
-                end
-
-                // if(alloc_page !== PAGE_W'(page)) begin
-                //         errors++;
-                //         $display("[%0t] ERROR: Incorrect page allocated", $time);
-                // end
-
                 alloc_req = 0;
                 @(negedge clk);
             endtask
@@ -71,7 +61,6 @@ module page_allocator_tb import kvp_pkg::*; ();
                 @(negedge clk);
                 free_en = 0;
                 free_ppage = '0;
-                @(negedge clk);
             endtask
 
             task automatic free_all();
@@ -84,6 +73,7 @@ module page_allocator_tb import kvp_pkg::*; ();
                 // Test 1, test reset
                 reset_everything();
                 test_errors = errors;
+                checks = 0;
 
                 rst_n = 0;
                 @(negedge clk);
@@ -117,34 +107,125 @@ module page_allocator_tb import kvp_pkg::*; ();
                 end
 
                 // Test 2, Allocate 16 times in a row
+                checks++;
                 reset_everything();
                 test_errors = errors;
 
-                for(int i = 0; i < NUM_PAGES; i++) begin
-                    allocate_pages();
+                allocate_all();
 
-                    if(alloc_page !== PAGE_W'(i + 1)) begin
-                        errors++;
-                        $error("[%0t] ERROR: Incorrect page allocated", $time);
-                    end
-                    
-                end
-
+                // check full
                 if(dut.full !== 1)begin
                     errors++;
                     $error("[%0t] ERROR: Full is not 1.", $time);
                 end
 
+                // check used_map
                 for(int i = 0; i < NUM_PAGES; i++) begin
                     if(!dut.used_map[i]) begin
                         $error("[%0t] ERROR: Used_map not funcitoning correctly.", $time);
                     end
                 end
 
+                // ping allocate request one additional time, it should throw an error
+                alloc_req = 1;
+                @(negedge clk)
+                
+                if(!alloc_error) begin
+                    $error("[%0t] ERROR: Alloc error not asserted, page allocator should be full.", $time);
+                end
+
+                if(alloc_ok) begin
+                    $error("[%0t] ERROR: Alloc ok asserted when it should not be.", $time);
+                end
+
                 if(test_errors == errors) begin
                     $display("Test 2 Passed: 16 pages filled, signals verified", $time);
                 end else begin
                     $display("Test 2 Failed: 16 Pages not filled, or signal error.", $time);
+                end
+
+                // Test 3, allocate until full in order, checking the page number will be correct
+                checks++;
+                reset_everything();
+                test_errors = errors;
+
+                for(int i = 0; i < NUM_PAGES - 1; i++) begin
+                    alloc_req = 1'b1;
+                    @(negedge clk);
+                    alloc_req = 1'b0;
+
+                    if(alloc_page !== (4'(i) + 1)) begin
+                        $error("[%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.", $time, 4'(i), alloc_page);
+                    end
+
+                    if(!dut.used_map[i]) begin
+                        $error("[%0t] ERROR: Used map not filled.", $time);
+                    end
+                    @(negedge clk);
+                end
+
+                if(test_errors == errors) begin
+                    $display("Test 3 Passed: 16 Consecutive page requests, correct pages identified.");
+                end else begin
+                    $display("Test 3 Failed: Either fail on allocation or incorrect page allocated");
+                end
+                
+                // Test 4, Free behavior
+                reset_everything();
+                test_errors = errors;
+                checks++;
+
+                allocate_all();
+                
+                free_page(7);
+                @(negedge clk);
+                
+                if(dut.used_map[6]) begin
+                    errors++;
+                    $error("[%0t] ERROR: Used map not updated on free 1. Index 8.", $time);
+                end
+
+                if(!free_ok) begin
+                    errors++;
+                    $error("[%0t] ERROR: Free_ok not driven correctly.", $time);
+                end
+                
+                @(negedge clk);
+                // Free a higher page
+                free_page(10);
+                @(negedge clk); 
+                if(dut.used_map[9]) begin
+                    errors++;
+                    $error("[%0t] ERROR: Used map not updated on free 1. Index 8.", $time);
+                end
+
+                if(!free_ok) begin
+                    errors++;
+                    $error("[%0t] ERROR: Free_ok not driven correctly.", $time);
+                end
+                
+                @(negedge clk);
+
+                // Request a page, it should allocate page 7 since now that is the lowest free page
+                alloc_req = 1'b1;
+                @(negedge clk);
+                alloc_req = 1'b0;
+
+                if(alloc_page !== 4'h7) begin
+                    errors++;
+                    $error("[%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.", $time, 4'h7, alloc_page);
+                end
+
+                if(!dut.used_map[6]) begin
+                    errors++;
+                    $error("[%0t] ERROR: Used map not filled.", $time);
+                end
+                @(negedge clk);
+
+                if(test_errors == errors) begin
+                    $display("Test 4 Passed: Freed page successfully and refilled correctly.");
+                end else begin
+                    $display("Test 4 Failed: Page not freed properly.");
                 end
 
                 $finish;

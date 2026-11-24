@@ -7,7 +7,8 @@ module  page_allocator import kvp_pkg::*; (
             
             output logic [PAGE_W - 1:0] alloc_page,
             output logic alloc_ok,
-            output logic alloc_error
+            output logic alloc_error,
+            output logic free_ok
         );
 
         logic [NUM_PAGES - 1:0] used_map;
@@ -43,6 +44,9 @@ module  page_allocator import kvp_pkg::*; (
                 
                 if(free_en && (used_map[free_ppage] == 1'b1)) begin
                     used_map[free_ppage] <= 1'b0;
+                    free_ok <= 1'b1;
+                end else begin
+                    free_ok <= 1'b0;
                 end
             end
         end
