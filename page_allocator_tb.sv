@@ -12,7 +12,7 @@ module page_allocator_tb import kvp_pkg::*; ();
             logic alloc_error;
             logic free_ok;
 
-            page_allocator #(.*) dut (.*);
+            page_allocator dut (.*);
 
             int checks = 0, errors = 0, test_errors;
 
@@ -31,9 +31,6 @@ module page_allocator_tb import kvp_pkg::*; ();
                 free_en = 0;
                 free_ppage = '0;
                 alloc_req = 0;
-                alloc_page = '0;
-                alloc_ok = 0;
-                alloc_error = 0;
 
                 @(negedge clk);
                 rst_n = 1;
@@ -122,6 +119,7 @@ module page_allocator_tb import kvp_pkg::*; ();
                 // check used_map
                 for(int i = 0; i < NUM_PAGES; i++) begin
                     if(!dut.used_map[i]) begin
+                        errors++;
                         $error("[%0t] ERROR: Used_map not funcitoning correctly.", $time);
                     end
                 end
@@ -131,10 +129,12 @@ module page_allocator_tb import kvp_pkg::*; ();
                 @(negedge clk)
                 
                 if(!alloc_error) begin
+                    errors++;
                     $error("[%0t] ERROR: Alloc error not asserted, page allocator should be full.", $time);
                 end
 
                 if(alloc_ok) begin
+                    errors++;
                     $error("[%0t] ERROR: Alloc ok asserted when it should not be.", $time);
                 end
 
@@ -149,16 +149,18 @@ module page_allocator_tb import kvp_pkg::*; ();
                 reset_everything();
                 test_errors = errors;
 
-                for(int i = 0; i < NUM_PAGES - 1; i++) begin
+                for(int i = 0; i < NUM_PAGES; i++) begin
                     alloc_req = 1'b1;
+                    #1;  // alloc_page is combinational: check it before the edge takes the page
+                    if(alloc_page !== PAGE_W'(i)) begin
+                        errors++;
+                        $error("[%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.", $time, i, alloc_page);
+                    end
                     @(negedge clk);
                     alloc_req = 1'b0;
 
-                    if(alloc_page !== (4'(i) + 1)) begin
-                        $error("[%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.", $time, 4'(i), alloc_page);
-                    end
-
                     if(!dut.used_map[i]) begin
+                        errors++;
                         $error("[%0t] ERROR: Used map not filled.", $time);
                     end
                     @(negedge clk);
@@ -176,51 +178,65 @@ module page_allocator_tb import kvp_pkg::*; ();
                 checks++;
 
                 allocate_all();
-                
+
+                // Free page 7. free_page() returns at the negedge right after the
+                // clock edge that did the free, so check here, with no extra wait.
+                // free_ok is registered: it is high for exactly this one cycle.
                 free_page(7);
-                @(negedge clk);
-                
-                if(dut.used_map[6]) begin
+
+                if(dut.used_map[7] !== 1'b0) begin
                     errors++;
-                    $error("[%0t] ERROR: Used map not updated on free 1. Index 8.", $time);
+                    $error("[%0t] ERROR: used_map[7] still set after freeing page 7.", $time);
                 end
 
-                if(!free_ok) begin
+                if(free_ok !== 1'b1) begin
                     errors++;
-                    $error("[%0t] ERROR: Free_ok not driven correctly.", $time);
+                    $error("[%0t] ERROR: free_ok not high after freeing page 7.", $time);
                 end
-                
-                @(negedge clk);
+
                 // Free a higher page
                 free_page(10);
-                @(negedge clk); 
-                if(dut.used_map[9]) begin
+
+                if(dut.used_map[10] !== 1'b0) begin
                     errors++;
-                    $error("[%0t] ERROR: Used map not updated on free 1. Index 8.", $time);
+                    $error("[%0t] ERROR: used_map[10] still set after freeing page 10.", $time);
                 end
 
-                if(!free_ok) begin
+                if(free_ok !== 1'b1) begin
                     errors++;
-                    $error("[%0t] ERROR: Free_ok not driven correctly.", $time);
+                    $error("[%0t] ERROR: free_ok not high after freeing page 10.", $time);
                 end
-                
+
                 @(negedge clk);
 
-                // Request a page, it should allocate page 7 since now that is the lowest free page
+                // Request a page. alloc_page and alloc_ok are combinational, so check
+                // them BEFORE the clock edge that takes the page. After that edge,
+                // alloc_page already points at the next free page.
                 alloc_req = 1'b1;
+                #1;
+                if(alloc_page !== 4'd7) begin
+                    errors++;
+                    $error("[%0t] ERROR: Incorrect page offered. Expected: 7, got %0d.", $time, alloc_page);
+                end
+
+                if(alloc_ok !== 1'b1) begin
+                    errors++;
+                    $error("[%0t] ERROR: alloc_ok not high while a page is free.", $time);
+                end
+
                 @(negedge clk);
                 alloc_req = 1'b0;
 
-                if(alloc_page !== 4'h7) begin
+                if(dut.used_map[7] !== 1'b1) begin
                     errors++;
-                    $error("[%0t] ERROR: Incorrect page allocated. Expected: %0d, got %0d.", $time, 4'h7, alloc_page);
+                    $error("[%0t] ERROR: used_map[7] not set after reallocating it.", $time);
                 end
 
-                if(!dut.used_map[6]) begin
+                // Page 10 is now the only free page, so it should be offered next
+                if(alloc_page !== 4'd10) begin
                     errors++;
-                    $error("[%0t] ERROR: Used map not filled.", $time);
+                    $error("[%0t] ERROR: Next free page should be 10, got %0d.", $time, alloc_page);
                 end
-                @(negedge clk);
 
                 if(test_errors == errors) begin
                     $display("Test 4 Passed: Freed page successfully and refilled correctly.");

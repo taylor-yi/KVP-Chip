@@ -22,6 +22,8 @@ module  page_allocator import kvp_pkg::*; (
         assign alloc_ok = alloc_req & !full;
         assign alloc_error = alloc_req & full;
 
+        assign free_ok = free_en && used_map[free_ppage];
+
         // Priority encoder, find the lowest bit thats 0
         always_comb begin
             alloc_page = '0;
@@ -44,9 +46,6 @@ module  page_allocator import kvp_pkg::*; (
                 
                 if(free_en && (used_map[free_ppage] == 1'b1)) begin
                     used_map[free_ppage] <= 1'b0;
-                    free_ok <= 1'b1;
-                end else begin
-                    free_ok <= 1'b0;
                 end
             end
         end
