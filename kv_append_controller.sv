@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module kv_append_controller import kvp_pkg::*; (
+module kv_append_controller import kvp_pkg::*; ( //NEEDS FIXING
             input logic clk, rst_n,
             // From top
             output logic append_ready,
